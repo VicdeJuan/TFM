@@ -31,8 +31,13 @@
 \usepackage[nottoc, notlot, notlof, notindex]{tocbibind} %% Opciones de índice
 \usepackage{latexsym}  %% Logo LaTeX
 
-\title{Memoria del Proyecto}
-\author{Nombre del autor}
+
+\newcommand{\nombreautor}{Víctor de Juan Sanz}
+\newcommand{\nombretutor}{César Sánchez Sánchez}
+\newcommand{\titulo}{Título del TFM}
+\newcommand{\TFM}{Trabajo de Fin de Máster}
+\newcommand{\master}{Máster en Formación del Profesorado: especialidad Matemáticas}
+
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
@@ -61,27 +66,27 @@
 \vspace{3cm}
 
 \Large
-TITULACIÓN EN MAYÚSCULAS
+\textsc{\master}
 
 \vspace{0.4cm}
 
 \large
-Curso Académico 2020/2021
+Curso Académico 2016/2017
 
 \vspace{0.8cm}
 
-Trabajo Fin de Carrera/Grado/Máster
+\TFM
 
 \vspace{2.5cm}
 
 \LARGE
-TÍTULO DEL TRABAJO EN MAYÚSCULAS
+\uppercase{\titulo}
 
 \vspace{4cm}
 
 \large
-Autor : Nombre del Alumno \\
-Tutor : Dr. Gregorio Robles
+Autor : \nombreautor \\
+Tutor : \nombretutor
 \end{center}
 \end{titlepage}
 
@@ -99,16 +104,16 @@ Tutor : Dr. Gregorio Robles
 \vspace{-4cm}
 \begin{center}
 \LARGE
-\textbf{Proyecto Fin de Carrera}
+\textbf{\TFM}
 
 \vspace{1cm}
 \large
-FIXME: Título
+\titulo
 
 \vspace{1cm}
 \large
-\textbf{Autor :} FIXME \\
-\textbf{Tutor :} Dr. Gregorio Robles Martínez
+\textbf{Autor :} \nombreautor \\
+\textbf{Tutor :} \nombretutor
 
 \end{center}
 
@@ -227,7 +232,7 @@ just before submitting.
 En este capítulo se introduce el proyeto. Debería tener información general sobre 
 el mismo, dando la información sobre el contexto en el que se ha desarrollado.
 
-No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\urlhttp://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
+No te olvides de echarle un ojo a la página con los cinco errores de escritura más frecuentes\footnote{\url{http://www.tallerdeescritores.com/errores-de-escritura-frecuentes}}.
 
 \section{}
 \label{sec:}
