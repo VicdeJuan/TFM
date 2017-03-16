@@ -30,7 +30,7 @@
 
 
 \RequirePackage{MathUnicode} % Paquete para poder poner caracteres griegos y demás cosas raras.
-\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
+\usepackage[a4paper, left=3.8cm, right=2.5cm, top=3cm, bottom=3cm]{geometry}
 \usepackage{times}
 
 %\usepackage[utf8]{inputenc}
@@ -49,11 +49,17 @@
 \usepackage[shadow]{todonotes} % Marcas To Do (a hacer)
 \usepackage{xspace} % Espaciado correcto detras de comandos.
 \usepackage{mathtools} % Arregla bastantes cosas de los entornos matemáticos por 
+\usepackage[acronym]{glossaries} % Glosarios
+\usepackage{makeidx}
+\usepackage[breaklinks=true]{hyperref}
+\usepackage{breakcites}
+
+\interfootnotelinepenalty=10000
 
 
 \newcommand{\nombreautor}{V\'ictor de Juan Sanz\xspace}
 \newcommand{\nombretutor}{Desir\'e Garc\'ia L\'azaro\xspace}
-\newcommand{\titulo}{T\'itulo del TFM\xspace}
+\newcommand{\titulo}{Gamificaci\'on: visión general y aplicación en el aula de Matemáticas\xspace}
 \newcommand{\TFM}{Trabajo de Fin de M\'aster\xspace}
 \newcommand{\master}{M\'aster en Formaci\'on del Profesorado, especialidad Matem\'aticas\xspace}
 %\newcommand{\master}{Máster en Formación del Profesorado: especialidad Matemáticas}
@@ -69,8 +75,19 @@
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
-\begin{document}
+\makeglossaries
+\input{src/glosario}
 
+\makeindex
+
+\newif\iftocs
+\tocstrue % Incluye en el índice general: la lista de tablas, lista de figuras y acrónimos.
+\tocsfalse % Excluye en el índice general: la lista de tablas, lista de figuras y acrónimos.
+
+
+
+\begin{document}
+\pagenumbering{Roman} % para empezar la numeración de página con números
 \renewcommand{\refname}{Bibliografía}  %% Renombrando
 \renewcommand{\appendixname}{Apéndice}
 
@@ -125,8 +142,9 @@ Tutor : \nombretutor
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Para firmar
 \clearpage
-\pagenumbering{gobble}
+%\pagenumbering{gobble}
 \chapter*{}
+\thispagestyle{empty} % para que no se numere esta pagina
 
 \vspace{-4cm}
 \begin{center}
@@ -174,7 +192,7 @@ Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2017
 %%%% Dedicatoria
 
 \chapter*{}
-\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+%\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
 mi familia / mi abuelo / mi abuela}
@@ -210,16 +228,40 @@ mi familia / mi abuelo / mi abuela}
 % y comentar/descomentar esa instrucción de LaTeX.
 %%%% Índice de figuras
 
+
 %%%% Índice de contenidos
 \tableofcontents 
+
+
 %%%% Índice de figuras
 \cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de figuras} % para que aparezca en el indice de contenidos
+
+\iftocs
+\addcontentsline{toc}{chapter}{Lista de figuras.}% para que aparezca en el indice de contenidos
+\else
+\fi
+
 \listoffigures % indice de figuras
+
+
+
 %%%% Índice de tablas
-%\cleardoublepage
-%\addcontentsline{toc}{chapter}{Lista de tablas} % para que aparezca en el indice de contenidos
-%\listoftables % indice de tablas
+\cleardoublepage
+
+\iftocs
+\addcontentsline{toc}{chapter}{Lista de tablas}% para que aparezca en el indice de contenidos
+\else
+\fi
+\listoftables % indice de tablas
+
+\iftocs
+\addcontentsline{toc}{chapter}{Acrónimos}% para que aparezca en el indice de contenidos
+\else
+\fi
+
+ 
+\printglossary[title=Glosario,toctitle=Glosario]
+\printglossary[title=Acrónimos,toctitle=Acrónimos,type=\acronymtype]
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -228,53 +270,128 @@ mi familia / mi abuelo / mi abuela}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
+\pagenumbering{arabic} % para empezar la numeración de página con números
 \chapter{Introducción}
-\input{tex/introduccion}
+\label{chap:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% OBJETIVOS %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Estado actual de la Educación de Matemáticas en España}
+\label{sec:EstadoEducacionMates}
 
-\cleardoublepage
-\chapter{Objetivos}
-\label{chap:objetivos}
+Todo va fatal y hay que hacer algo. 
+%
+Informes PISA \cite{InformePisa} Y TIMSS \cite{InformeTimss}.
+%
+Además, las actitudes hacia las matemáticas no suelen ser buenas. Hay miedos, indefensión ... ¿Depende del profesor? ¿Depende del alumno? En \cite{ActitudesHaciaMates} se contestan algunas de estas preguntas y más.
 
-\section{Objetivo general}
-\label{sec:objetivo-general}
+Este trabajo se propone ofrecer una propuesta de intervención en el aula concreta y detallada con la que intentar atajar eso.
 
-
-\section{Objetivos específicos}
-\label{sec:objetivos-especificos}
+Para ello, procedemos a describir el marco teórico en el que se enmarca la metodología.
 
 
-\section{Planificación temporal}
-\label{sec:planificacion-temporal}
+\section{Marco teórico}
+
+En esta sección procedemos a describir a nivel general la Gamificación. 
+%
+La Gamificación entendida como una técnica que puede ser aplicada a muchos ámbitos, no sólo al educativo. 
+%
+Primeramente trataremos de clarificar el concepto de gamificación, porqué y cómo se puede gamificar un contexto.
+%
+Una vez detallado, en la siguiente sección trataremos de aplicar la gamificación al aula.
+
+\subsection{Qué es la Gamificación}
+
+Atendiendo a \cite{GamificationDef} podemos definir \concept{Gamificación} como \textit{el uso de elementos de juegos en contextos no lúdicos}. 
+
+Algunos de los elementos que hacen atractivos los juegos son
+\textbf{Feedback instantáneo}
+poder tomar \textbf{decisiones importantes},
+\textbf{bucles de atracción y de fracaso},
+\textbf{niveles de dificultad progresiva}... La idea es incorporar esos elementos en algún contexto no lúdico (en general, no sólo en la educación\footnote{No querría centrarme sólo en la educación para dar una visión más general de la gamificación como técnica en muchos campos: marketing, negocios... Creo que ofrece un punto de vista más riguroso y científico hablar de Gamificación en general y no sólo Gamificación en la educación.}).
 
 
+\paragraph{Gamificación no es lo mismo que Juegos serios}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% ESTADO DEL ARTE %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+Son conceptos distintos. Los \concept[Juegos serios]{juegos serios} son \cite{GamificationDef}... mientras que la gamificación consiste en...
 
-\cleardoublepage
-\chapter{Estado del arte}
-
-Descripción de las tecnologías que utilizas en tu trabajo. Con dos o tres párrafos por cada tecnología, vale.
+Aunque los juegos serios pueden ser interesantes (conclusiones de \cite{MetaSerious}), se salen de este estudio.
 
 
-Puedes citar libros, como el de Bonabeau et al. sobre procesos estigmérgicos~\cite{bonabeau:_swarm}. % Nota que el ~ añade un espacio en blanco, pero no deja que exista un salto de línea. Imprescindible ponerlo para las citas.
+\subsection{Porqué gamificar}
 
-También existe la posibilidad de poner notas al pie de página, por ejemplo, 
-una para indicarte que visite la página de 
-LibreSoft\footnote{\url{http://www.libresoft.es}}.
+Alguna lectura sobre porqué gamificar conceptualmente.
 
-\section{Sección 1} 
-\label{sec:seccion1}
+Porque funciona. Conclusiones de \cite{EmpiricalGamification}
+
+\subsection{Cómo gamificar}
+
+\paragraph{Pensando como un diseñador}
+\paragraph{La anatomía de la diversión}
 
 
+\subsubsection{Elementos de la Gamificación}
+
+Los elementos de la Gamificación son los elementos que podemos encontrar en los juegos, atendiendo a \cite{Hunicke04mda:a}:
+
+\begin{itemize}
+	\item \concept{Dinámicas}:
+	\item \concept{Mecánicas}:
+	\item \concept{Componentes}:
+\end{itemize}
+
+
+\paragraph{Puntos ...} \gls{pbl}
+
+\subparagraph*{Puntos}
+
+\subparagraph*{Medallas}
+
+\subparagraph*{Leaderboards}
+
+Los leaderboards desmotivan al 80\% de la gente. 
+
+Podríamos definir competición utilizando la definición de \cite{Crawford_CompetitionDef} Competition is when students are “constrained from impeding each other and instead devote the entirety of their attentions to optimizing their own performance.”
+
+Crean una competición con la que hay que tener cuidado. Leyendo \cite{CompetitionInEd}...
+
+\subsubsection{Impacto de la motivación}
+
+\paragraph{Posibles peligros}
+
+Ya hemos constatado un posible peligro al describir el componente \textit{leaderboard}. Además, hay otros.
+
+Más competidores, menos motivación. \cite{n-effect}
+
+Premios para los ganadores deberían ser de poca importancia o incluso simbólicos para asegurar que el esfuerzo de los estudiantes es intrínseco y no está dirigido por la expetativa del premio \cite{CompetitionInEd}.
+
+\section{La Gamificación en el aula}
+
+Hasta ahora hemos hablado en términos generales de la gamificación. 
+%
+En esta sección trataremos de estudiar cómo se adapta esa teoría general al ecosistema de un aula.
+
+\cite{lee2011gamification} constata varias cosas.
+
+Hay otros estudios interesantes como \cite{Hanus2015152} y \cite{ReviewGamificationInEducation}.
+
+\subsection{Para qué Gamificar en el aula}
+
+En la sección \ref{sec:EstadoEducacionMates} hemos constatado algunos problemas. 
+%
+Vamos a ir viendo cómo la Gamificación puede atajar esos problemas concretos y también, qué problemas se quedarían sin atajar.
+
+\subsubsection{¿Es una metodología inclusiva?}
+
+Esta pregunta es importante, pero no hay que descartar la metodología en caso de que la respuesta sea negativa, ya que también es importante plantearse:  ¿Es una metodología \textbf{más inclusiva} que la tradicional?
+%
+Tal vez no es una metodología perfecta, pero sí una metodología que aporta mejoras.
+
+
+\subsection{¿Se pueden gamificar las Matemáticas?}
+
+Lo siguiente que necesitamos, si estamos convencidos de que la Gamificación puede ser una buena metodología, es tratar cómo se puede gamificar un aula.
+%
+Dedicaremos el próximo capítulo a ello.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -282,31 +399,70 @@ LibreSoft\footnote{\url{http://www.libresoft.es}}.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Diseño e implementación}
+\chapter{Una propuesta de Gamificación}
 
-\section{Arquitectura general} 
-\label{sec:arquitectura}
+\section{Revisión de la ley y del currículo}
 
-figura~\ref{fig:arquitectura}.
+Primero: ¿Permite o incluso anima la ley al empleo de esta metodología?
 
-\begin{figure}
-  \centering
-  \includegraphics[width=9cm, keepaspectratio]{img/arquitectura}
-  \caption{Estructura del parser básico}
-  \label{fig:arquitectura}
-\end{figure}
+Segundo: Necesitamos elegir un curso y su currículo.
 
+\subsection{Elección del curso.}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% RESULTADOS %
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+El curso elegido es: porque...
 
-\cleardoublepage
-\chapter{Resultados}
+\subsubsection{Contenidos de ese curso}
 
 
+\subsubsection{Estándares de Aprendizaje Evaluables}
 
+
+\section{Dinámicas, mecánicas y componentes de la Gamificación}
+
+\subsection{Dinámicas}
+
+\paragraph{Narrativa}
+\paragraph{Progresión}
+
+\subsection{Mecánicas}
+
+Las mecánicas que utilizaremos serán:
+\paragraph{Retos},
+\paragraph{Competición y cooperación},
+\paragraph{Feedback},
+\paragraph{Premios}
+
+ Los premios serán: logros, medallas, puntos (que describiremos a continuación).
+
+\subsection{Elementos}
+
+Los elementos que utilizaremos serán:
+\paragraph{Niveles},
+\paragraph{Logros},
+\paragraph{Puntos},
+\paragraph{Medallas},
+\paragraph{Jefes finales}...
+
+\section{Programación anual Gamificada}
+
+\subsection{Cobertura de los contenidos. Evaluación de las competencias. Incorporación de los Estándares de Aprendizaje Evaluables...}
+
+Matriz de trazabilidad entre los Estándares de Aprendizaje Evaluables y los componentes de la Gamificación:
+\begin{table}[hbtp]
+\begin{tabular}{c|c}
+& Estándares de Aprendizaje Evaluables\\\hline
+Elementos & \\\hline
+\end{tabular}
+\label{Trazabilidad}
+\caption{Matriz de trazabilidad entre los Estándares de Aprendizaje Evaluables y los componentes de la Gamificación.}
+\end{table}
+
+
+\section{Evaluación de la gamificación}
+
+Es fundamental saber si la gamificación tal como se ha llevado a cabo ha merecido la pena, qué aspectos son mejorables y cuáles hay que mantener.
+%
+Podríamos utilizar el marco propuesto por \cite{EvaluacionGamificacion} para autoevaluar la gamificación realizada.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -321,54 +477,14 @@ figura~\ref{fig:arquitectura}.
 \section{Consecución de objetivos}
 \label{sec:consecucion-objetivos}
 
-Esta sección es la sección espejo de las dos primeras del capítulo de objetivos,
-donde se planteaba el objetivo general y se elaboraban los específicos.
-
-Es aquí donde hay que debatir qué se ha conseguido y qué no. Cuando algo no
-se ha conseguido, se ha de justificar, en términos de qué problemas se han
-encontrado y qué medidas se han tomado para mitigar esos problemas.
-
-
-\section{Aplicación de lo aprendido}
-\label{sec:aplicacion}
-
-Aquí viene lo que has aprendido durante el Grado/Máster y que has aplicado
-en el TFG/TFM. Una buena idea es poner las asignaturas más relacionadas y
-comentar en un párrafo los conocimientos y habilidades puestos en práctica.
-
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
-
-
-\section{Lecciones aprendidas}
-\label{sec:lecciones_aprendidas}
-
-Aquí viene lo que has aprendido en el Trabajo Fin de Grado/Máster.
-
-\begin{enumerate}
-  \item a
-  \item b
-\end{enumerate}
 
 
 \section{Trabajos futuros}
 \label{sec:trabajos_futuros}
 
-Ningún software se termina, así que aquí vienen ideas y funcionalidades
-que estaría bien tener implementadas en el futuro.
+\subsection{Puesta en marcha y evaluación. Detectar posibles mejoras}
 
-Es un apartado que sirve para dar ideas de cara a futuros TFGs/TFMs.
-
-
-\section{Valoración personal}
-\label{sec:valoracion}
-
-Finalmente (y de manera opcional), hay gente que se anima a dar su punto de
-vista sobre el proyecto, lo que ha aprendido, lo que le gustaría haber aprendido,
-las tecnologías utilizadas y demás.
+\subsection{Propuestas de Gamificación para otros cursos y otras asignaturas.}
 
 
 
@@ -379,8 +495,6 @@ las tecnologías utilizadas y demás.
 
 \cleardoublepage
 \appendix
-\chapter{Manual de usuario}
-\label{app:manual}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -392,7 +506,7 @@ las tecnologías utilizadas y demás.
 
 % Las siguientes dos instrucciones es todo lo que necesitas
 % para incluir las citas en la memoria
-\bibliographystyle{abbrv}
+\bibliographystyle{apalike}
 \bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
 % las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
 % que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
@@ -400,5 +514,7 @@ las tecnologías utilizadas y demás.
 % y verás que lo puedes hacer de manera sencilla.
 % Más información: 
 % http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
+
+\printindex
 
 \end{document}
