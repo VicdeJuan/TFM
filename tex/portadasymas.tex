@@ -1,0 +1,175 @@
+\pagenumbering{Roman} % para empezar la numeración de página con números
+\renewcommand{\refname}{Bibliografía}  %% Renombrando
+\renewcommand{\appendixname}{Apéndice}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% PORTADA
+
+\begin{titlepage}
+\begin{center}
+\begin{tabular}[c]{c c}
+%\includegraphics[bb=0 0 194 352, scale=0.25]{logo} &
+\includegraphics[scale=0.25]{img/logo_vect.png} &
+\begin{tabular}[b]{l}
+\Huge
+\textsf{UNIVERSIDAD} \\
+\Huge
+\textsf{REY JUAN CARLOS} \\
+\end{tabular}
+\\
+\end{tabular}
+
+\vspace{3cm}
+
+\master
+
+\vspace{0.4cm}
+
+\large
+Curso Académico 2016/2017
+
+\vspace{0.8cm}
+
+\TFM
+
+\vspace{2.5cm}
+
+\LARGE
+\textsc{\titulo}
+
+\vspace{4cm}
+
+\large
+Autor : \nombreautor \\
+Tutor : \nombretutor
+\end{center}
+\end{titlepage}
+
+\newpage
+\mbox{}
+\thispagestyle{empty} % para que no se numere esta pagina
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Para firmar
+\clearpage
+%\pagenumbering{gobble}
+\chapter*{}
+\thispagestyle{empty} % para que no se numere esta pagina
+
+\vspace{-4cm}
+\begin{center}
+\LARGE
+\textbf{\TFM}
+
+\vspace{1cm}
+\large
+\titulo
+
+\vspace{1cm}
+\large
+\textbf{Autor :} \nombreautor \\
+\textbf{Tutor :} \nombretutor
+
+\end{center}
+
+\vspace{1cm}
+La defensa del presente \TFM se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2017, siendo calificada por el siguiente tribunal:
+
+
+\vspace{0.5cm}
+\textbf{Presidente:}
+
+\vspace{1.2cm}
+\textbf{Secretario:}
+
+\vspace{1.2cm}
+\textbf{Vocal:}
+
+
+\vspace{1.2cm}
+y habiendo obtenido la siguiente calificación:
+
+\vspace{1cm}
+\textbf{Calificación:}
+
+
+\vspace{1cm}
+\begin{flushright}
+Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2017
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Dedicatoria
+
+\chapter*{}
+%\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
+\begin{flushright}
+\textit{Dedicado a \\
+mi familia / mi abuelo / mi abuela}
+\end{flushright}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Agradecimientos
+
+\chapter*{Agradecimientos}
+\input{tex/agradecimientos}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Resumen
+
+\chapter*{Resumen}
+\input{tex/resumen}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%% Resumen en inglés
+
+\chapter*{Summary}
+\input{tex/abstract}
+\cleardoublepage
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ÍNDICES %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Las buenas noticias es que los índices se generan automáticamente.
+% Lo único que tienes que hacer es elegir cuáles quieren que se generen,
+% y comentar/descomentar esa instrucción de LaTeX.
+%%%% Índice de figuras
+
+
+%%%% Índice de contenidos
+\tableofcontents 
+
+
+%%%% Índice de figuras
+\cleardoublepage
+
+\iftocs
+\addcontentsline{toc}{chapter}{Lista de figuras.}% para que aparezca en el indice de contenidos
+\else
+\fi
+
+\listoffigures % indice de figuras
+
+
+
+%%%% Índice de tablas
+\cleardoublepage
+
+\iftocs
+\addcontentsline{toc}{chapter}{Lista de tablas}% para que aparezca en el indice de contenidos
+\else
+\fi
+\listoftables % indice de tablas
+
+\iftocs
+\addcontentsline{toc}{chapter}{Acrónimos}% para que aparezca en el indice de contenidos
+\else
+\fi
+
+ 
+\printglossary[title=Glosario,toctitle=Glosario]
+\printglossary[title=Acrónimos,toctitle=Acrónimos,type=\acronymtype]
