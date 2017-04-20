@@ -56,6 +56,9 @@
 
 \interfootnotelinepenalty=10000
 
+\usepackage{placeins}
+\usepackage{flafter}
+
 
 \newcommand{\nombreautor}{V\'ictor de Juan Sanz\xspace}
 \newcommand{\nombretutor}{Desir\'e Garc\'ia L\'azaro\xspace}
@@ -72,6 +75,9 @@
 \message{Loading Palatino fonts}
 
 \newcommand{\coment}[1]{\textit{#1}}
+%\newcommand{\citePisa}[1]{\cite{InformePisa#1}}
+\newcommand{\citePisa}[1]{(\gls{PISA}, #1)}
+
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
@@ -272,111 +278,7 @@ mi familia / mi abuelo / mi abuela}
 \cleardoublepage
 \pagenumbering{arabic} % para empezar la numeración de página con números
 \chapter{Introducción}
-\label{chap:intro} % etiqueta para poder referenciar luego en el texto con ~\ref{sec:intro}
-
-
-\section{Estado actual de la Educación de Matemáticas en España}
-\label{sec:EstadoEducacionMates}
-
-En esta sección se introducirá al lector en la situación actual de la enseñanza de Matemáticas en España. 
-%
-Se tratarán 2 temas fundamentales: la comparativa de España con otros países en la enseñanza de Matemáticas y las actitudes y problemas concretos de la educación de Matemáticas en España.
-
-
-\paragraph{Informes Internacionales (en Matemáticas)} 
-
-Fundamentalmente utilizaremos los informes \gls{PISA} \cite{InformePisa2012}, \cite{InformePisa2015}, centrándonos exclusivamente en Matemáticas.
-
-En \cite{InformePisa2012} España se sitúa en la posición 33 (de 65) con una puntuación de 484 puntos, siendo esta puntuación inferior a la media OCDE de ese año (494) y a la media UE (489).
-%
-En el siguiente informe PISA \cite{InformePisa2015}, se produce una mejora en España. 
-%
-La puntuación es mayor siendo la tendencia internacional negativa. 
-%
-Sin embargo, la puntuación española sigue por debajo de la media.
-%
-En la tabla \ref{tbl::ResumenPisa} se encuentran agrupados estos datos.
-
-\begin{table}[hbtp]
-\centering
-\begin{tabular}{ccccc}
-Año & Posición España & Puntuación España & Media OCDE & Media UE\\\hline
-2012 & 33 & 484 & 494 & 489\\
-2015 & 29 & 486 & 490 & 493
-\end{tabular}
-\caption{Resumen resultados Pisa}
-\label{tbl::ResumenPisa}
-\end{table}
-
-No obstante, es necesario mencionar que no todas las comunidades autónomas obtienen los mismos resultados. 
-%
-Por ejemplo, en 2015, algunas comunidades autónomas como Navarra (518), Castilla y León (506), La Rioja (505) y la Comunidad de Madrid (503) se sitúan por encima de la media OCDE.
-
-
-Otra información relevante aportada por los informes PISA es el porcentaje de estudiantes excelentes (nivel 5 ó 6 de las pruebas) y el porcentaje de estudiantes rezagados (nivel 1 o inferior).
-%
-En la figura \ref{fig::PisaRezEx} se encuentran las gráficas de las tendencias obtenidas en España y en la OCDE según los informes PISA desde 2002.
-
-
-\begin{figure}[hbtp]
-\centering
-\includegraphics[scale=0.62]{img/PisaRezagados.png}
-\includegraphics[scale=0.62]{img/PisaExcelentes.png}
-\caption{Comparativa de estudiantes rezagados (imagen superior) y excelentes (imagen inferior) en España y en los países OCDE. \newline{} Fuente: Elaboración propia a partir de los informes PISA.}
-\label{fig::PisaRezEx}
-\end{figure}
-
-
-En el porcentaje de estudiantes rezagados se puede apreciar una ligera mejora en la tendencia española frente a un empeoramiento de la tendencia internacional.
-%
-A pesar de ello, casi uno de cada 4 adolescentes posee un nivel 1 o inferior de habilidad matemática. 
-%
-Esta situación es claramente mejorable.
-%
-Por otro lado, el porcentaje de estudiantes excelentes en España se mantiene estable en torno al 7\% u 8\% (dependiendo del año), siendo inferior a la media internacional.
-
-
-Debido a que el informe PISA es un informe descriptivo, vamos a recurrir a \cite{ActitudesHaciaMates} para descubrir algunos aspectos influyentes en la educación matemática en España.
-
-
-\paragraph{Estudio Nacional}
-
-En el trabajo \cite{ActitudesHaciaMates} se realiza un estudio transversal para explorar las actitudes hacia las Matemáticas de alumnos en el sistema educativo español, desde tercero de E.P. hasta el primer curso universitario. 
-%
-Se centra sobretodo en explicar el rechazo de los estudiantes hacia las Matemáticas.
-%
-El estudio apoya la existencia de un círculo vicioso: dificultad $\to$ aburrimiento$\to$ suspenso$\to$ fatalismo$\to$ bajo autoconcepto$\to$ desmotivación$\to$ rechazo$\to$ dificultad.
-\label{circuloVicioso}
-
-
-%El modelo construido utiliza 7 variables (de las 40 estudiadas) que presentamos a continuación, ordenadas según su influencia: \begin{itemize}
-%\vspace{-0.4cm}\item Percepción de materia aburrida-divertida.
-%\vspace{-0.4cm}\item Percepción de materia fácil-difícil.
-%\vspace{-0.4cm}\item Percepción de competencias para las Matemáticas.
-%\vspace{-0.4cm}\item Influencia del profesor sobre el rechazo (El rechazo hacia las Matemáticas se debe, en cierta medida, a los profesores de Matemáticas que el estudiante ha tenido). La relación es lineal: valores altos de rechazo se correlacionan con valores altos de influencia, mientras que valores bajos de rechazo se correlacionan con valores bajos de influencia.
-%\vspace{-0.4cm}\item Atribución de causalidad de éxito en Matemáticas: los estudiantes consideran que las aptitudes ejercen una mayor influencia en el desempeño que la dedicación y el estudio.
-%\vspace{-0.4cm}\item Competencia percibida para el cálculo mental.
-%\vspace{-0.4cm}\item Dificultad percibida para el aprendizaje matemático.
-%\end{itemize}
-
-Al trabajar con una muestra representativa de diversas edades, se puede valorar la influencia de la edad en el rechazo hacia las Matemáticas, comprobándose que el rechazo hacia las Matemáticas aumenta con la edad y las relaciones predictivas se hacen más fuertes.
-%
-Por ejemplo, el porcentaje de alumnos que rechazan las Matemáticas en 3 de E.P. es del 13.10\%, en 5 E.P. del 28\%  y el de estudiantes de 3 E.S.O. es del 49.50\%.
-%
-Parece que es en la E.S.O. donde se produce un gran aumento del rechazo hacia las Matemáticas.
-
-
-\cite{ActitudesHaciaMates} establece que la variable más importante\footnote{Al menos de las 40 estudiadas}. es la percepción de la materia en la escala aburrida-divertida, seguida por la percepción de dificultad.
-
-
-\paragraph{Conclusión:} El presente trabajo pretende ofrecer una respuesta a la situación de las Matemáticas actuales.
-%
-Ofrecemos una propuesta metodológica para romper el círculo vicioso (ver \ref{circuloVicioso}) en los eslabones de la desmotivación y el aburrimiento.
-
-Por otro lado, creemos que esta propuesta metodológica tiene mucho potencial en Educación Secundaria, ya que es donde se produce el aumento brusco del rechazo.
-%
-Si en los cursos de la E.S.O. se consiguiera influir en las percepciones de los estudiantes aparejando Matemáticas con diversión se podrían reducir drásticamente el porcentaje de alumnos rezagados en Matemáticas (ver \ref{fig::PisaRezEx}) y mejorar el nivel matemático general.
-
+\input{tex/introduccion.tex}
 
 \section{La Gamificación}
 
