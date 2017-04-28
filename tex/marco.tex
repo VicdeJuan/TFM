@@ -139,6 +139,7 @@ De acuerdo con \cite{whyweplaygames} hay 4 tipos de diversión:
 %
 \concept[Diversión\IS Fácil]{Diversión fácil} -- aquella diversión que se produce ante un disfrute de la experiencia, manteniendo la atención del jugador. Se basa en la curiosidad y la intriga --;
 %
+\label{kindsoffun}
 \concept[Diversión\IS Difícil]{Diversión difícil}  -- aquella diversión que producen los retos que requieren habilidad y estrategia más que suerte y que permiten al jugador constatar cuan bueno es--;
 %
 \concept[Diversión\IS Social]{Diversión social} -- aquella diversión que se fundamenta en la relación con otras personas durante el juego --;
@@ -171,15 +172,16 @@ Y eso podría considerarse que la dimensión social les divierte.
 \subsubsection{Elementos de la Gamificación}
 Los elementos de la Gamificación son los elementos que podemos encontrar en los juegos, atendiendo a \cite{Hunicke04mda:a} son dinámicas, mecánicas y componentes.
 
-\paragraph{\index{Dinámicas}}
-
+\concept{Dinámicas} 
+Las dinámicas son 
+%
 Por ejemplo, se considerarían dinámicas las reglas, las emociones, la narrativa, la progresión y las relaciones personales.
 
-\paragraph{\index{Mecánicas}} Las mecánicas son los procesos que 
-
+\concept{Mecánicas} Las mecánicas son los procesos que definen formalmente el contexto. 
+%
 Por ejemplo se considerarían mecánicas los retos, la suerte, la competición y la cooperación, el feedback, las recompensas, la adquisición de recursos, las transacciones y los estados de finalización.
 
-\paragraph{\index{Componentes}} Los componentes son las instancias específicas de las mecánicas y las dinámicas. 
+\concept{Componentes} Los componentes son las instancias específicas de las mecánicas y las dinámicas. 
 
 Serían componentes los logros, los avatares, los monstruos finales\footnote{Batalla muy difícil que tiene lugar al final de cada nivel.}, los combates, el desbloqueo de contenido, los niveles, las misiones, los equipos, las posesiones y el grafo social.
 %
@@ -190,50 +192,75 @@ Además, 3 componentes que merecen una mención específica son los puntos (poin
 La gamificación trata de crear una experiencia centrada en la persona. 
 %
 La implementación de un sistema de recompensas enfocado a realizar con eficiencia la función, dejando de lado la experiencia de los jugadores no puede ser considerada una gamificación y de hecho puede ser contraproducente.
+%
+Esta confusión es habitual porque estos tres componentes son de los más útiles y fáciles de implementar, además de tener varias funciones específicas.
+%
+Los \textbf{puntos}, por ejemplo, otorgan un feedback acerca del rendimiento y el progreso, es una fuente de datos importante para el diseñador, pueden ligarse con recompensas y se pueden utilizar para determinar los \concept{win state}\footnote{Los estados del juego en los que se ha producido una victoria.}.
+%
+Las \textbf{medallas} tienen una flexibilidad que permite definir el estilo de un jugador. 
+%
+Además, tienen un componente social muy importante, ya que muestran el estatus del jugador y son una representación de los logros conseguidos. 
+%
+También, algunos jugadores se sienten motivados a coleccionarlas.
+%
+Por último, los \textbf{rankings} o leaderboards crean un cierto sentido de competición, en el que los jugadores quieren ascender a puestos más altos del ranking, podría ser por el estatus que ofrecen esas posiciones.
+%
+Se ha estudiado que los leaderboards completos desmotivan al 80\% de las personas, debido a la gran brecha que se produce entre los primeros puestos y los últimos.
+%
+La aproximación más utilizada es diseñar leaderboards entre grupos más pequeños de jugadores, por ejemplo, entre los jugadores más cercanos con una puntuación cercana o con sus amigos.
+
+\subsection{Algunos aspectos a tener en cuenta}
+
+\subsubsection{Teoría de la motivación}
+\label{SDT}
+En la Psicología de la Motivación se ha establecido una diferencia entre 2 tipos de motivaciones\cite{SDT}:  \concept[Motivación\IS Intrínseca]{Motivación intrínseca} -- aquella que depende de los procesos cognitivos internos y está dirigida por el sentido de la autocompetencia, autonomía y relación -- y la \concept[Motivación\IS Extrínseca]{motivación extrínseca} -- aquella que depende de las recompensas que se puedan adquirir con la conducta realizada.
+%
+Además de esta diferencia se ha constatado que las conductas motivadas extrínsecamente dejan de realizarse cuando desaparece la fuente de motivación, incluso cuando en un momento anterior a la aparición de recompensas la conducta se llevara a cabo motivada intrínsecamente.
+
+Es importante conocer esta diferencia a la hora de plantear el objetivo de nuestra gamificación. 
+%
+¿Interesa al diseñador crear un sistema sencillo basado en la motivación extrínseca de los jugadores o, por el contrario, diseñar un sistema más complejo que fomente y haga crecer la motivación intrínseca?
 
 
-\subparagraph*{Puntos}
 
-\subparagraph*{Medallas}
+\subsubsection{Impacto de la competición en la motivación}
 
-\subparagraph*{Leaderboards}
-
-Los leaderboards desmotivan al 80\% de la gente. 
-
-Podríamos definir competición utilizando la definición de \cite{Crawford_CompetitionDef} Competition is when students are “constrained from impeding each other and instead devote the entirety of their attentions to optimizing their own performance.”
-
-Crean una competición con la que hay que tener cuidado. Leyendo \cite{CompetitionInEd}...
-
-\subsubsection{Impacto de la motivación}
-
-\paragraph{Posibles peligros}
 \label{PosiblesPeligros}
+%
+La competición es otra herramienta más a disposición del diseñador, pero es importante tener claro el resultado de algunas investigaciones.
+%
+Por ejempo, \cite{Crawford_CompetitionDef} señala que la competición puede centrar la atención en impedir que el contrincante venza en lugar de centrarse en mejorar y optimizar su competencia.
+%
 
-Ya hemos constatado un posible peligro al describir el componente \textit{leaderboard}. Además, hay otros.
+Otro fenómeno estudiado por \cite{n-effect} es que el número de competidores y la motivación de los mismos mantienen una relación inversamente proporcional, es decir, cuantos más competidores, menor motivación.
 
-Más competidores, menos motivación. \cite{n-effect}
+Por último, un estudio llevado a cabo sobre la competición en la educación \cite{CompetitionInEd} constata que los premios para los ganadores deberían ser de poca importancia o incluso simbólicos para asegurar que el esfuerzo de los estudiantes es intrínseco y no está dirigido por la expetativa del premio.
 
-Premios para los ganadores deberían ser de poca importancia o incluso simbólicos para asegurar que el esfuerzo de los estudiantes es intrínseco y no está dirigido por la expetativa del premio \cite{CompetitionInEd}.
+
 
 \section{Educación gamificada}
 
-Hasta ahora hemos hablado en términos generales de la gamificación. 
+Hasta ahora hemos estado tratando la Gamificación en términos generales, sin centrarnos específicamente en la educación. 
 %
 En esta sección trataremos de estudiar cómo se adapta esa teoría general al ecosistema de un aula.
 
-\cite{lee2011gamification} constata varias cosas.
 
-Hay otros estudios interesantes como \cite{Hanus2015152} y \cite{ReviewGamificationInEducation}.
-
-\subsection{Potencial de la gamificación en el aula}
-
-En la sección \ref{sec:EstadoEducacionMates} hemos constatado algunos problemas. 
+\cite{lee2011gamification} sugiere que el sistema educativo ya contiene elementos de la gamificación, más concretamente \gls{PBL}, ya que los estudiantes realizan unos exámenes para obtener una calificación (puntos) y si se han obtenido más de 5 puntos, se obtiene la medalla de \textit{aprobado}.
 %
-Vamos a ir viendo cómo la Gamificación puede atajar esos problemas concretos y también, qué problemas se quedarían sin atajar.
-
-\subsubsection{¿Es una metodología inclusiva?}
-
-Esta pregunta es importante, pero no hay que descartar la metodología en caso de que la respuesta sea negativa, ya que también es importante plantearse:  ¿Es una metodología \textbf{más inclusiva} que la tradicional?
+Incluso, se puede obtener la medalla de \textit{mención de honor} en la evaluación final.
 %
-Tal vez no es una metodología perfecta, pero sí una metodología que aporta mejoras.
+Además, encubiertamente se forma un leaderboard, ya que los alumnos tienen claro quienes son los mejores y los peores alumnos (en términos de calificaciones obtenidas).
+%
+Sin embargo, estos elementos no implican necesariamente motivación por parte de los alumnos.
+%
+Diseñar una gamificación en un aula puede motivar a los estudiantes, ofrecer a los profesores mejore herramientas para guiar y recompensar a sus estudiantes y enseñar a los estudiantes que la educación puede ser una experiencia divertida \cite{lee2011gamification}.
+
+Es importante tener en cuenta que la gamificación en educación no debería basarse en una motivación extrínseca, sino fomentar la motivación intrínseca. 
+%
+De esta manera, los estudiantes podrán desarrollar una mayor capacidad para valorar el aprendizaje y cuando avancen por el sistema educativo sean capaces de aprovechar contextos educativos no gamificados. 
+
+En la sección \ref{sec:EstadoEducacionMates} se comentó la existencia de un círculo vicioso (ver figura \ref{fig::circuloVicioso}) y que la variable más influyente en el rechazo hacia las Matemáticas en España es la percepción de la materia como aburrida o divertida.
+%
+Creemos que la Gamificación puede ayudar a modificar esa percepción aprovechando que existen tareas difíciles y divertidas (ver \ref{kindsoffun}) además de romper el círculo vicioso por 2 extremos diametralmente opuestos: Aburrimiento y desmotivación.
+
 
