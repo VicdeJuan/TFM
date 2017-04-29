@@ -1,7 +1,7 @@
-all: memoria.pdf
+all: TFM.pdf
 
-memoria.pdf: memoria.tex
-	pdflatex memoria.tex; bibtex memoria; pdflatex memoria.tex; pdflatex memoria.tex
+TFM.pdf: TFM.tex
+	pdflatex TFM.tex; bibtex TFM; makeglossaries TFM; makeindex TFM; pdflatex TFM.tex; pdflatex TFM.tex
 
 clean:
-	rm -f memoria.dvi memoria.ps *.snm *.out *.nav *.log *.aux *.toc *.vrb *.pdf *~ *.lof *.blg *.bbl
+	rm -f TFM.dvi TFM.ps *.snm *.out *.nav *.log *.aux *.toc *.vrb *.pdf *~ *.lof *.blg *.bbl
