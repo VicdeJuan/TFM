@@ -1,7 +1,7 @@
 all: TFM.pdf
 
 graphs: img/*.txt
-	dot -Tpng circuloVicioso.txt -o circuloVicioso.png 
+	dot -Tpng img/circuloVicioso.txt -o img/circuloVicioso.png 
 
 R: src/*.R
 	Rscript src/*.R
