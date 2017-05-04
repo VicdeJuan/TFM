@@ -7,53 +7,53 @@
 
 \begin{titlepage}
 \begin{center}
-\begin{tabular}[c]{c c}
-%\includegraphics[bb=0 0 194 352, scale=0.25]{logo} &
-\includegraphics[scale=0.25]{img/logoportada.png} &
-\begin{tabular}[b]{l}
 \Huge
-\textsf{UNIVERSIDAD} \\
-\Huge
-\textsf{REY JUAN CARLOS} \\
-\end{tabular}
-\\
-\end{tabular}
+\textsc{\textbf{Universidad Rey Juan Carlos}} \\
+\vspace{1cm}
+\includegraphics[scale=1]{img/logoportada.png}
 
-\vspace{3cm}
+\vspace{1cm}
+\large\textsc{\textbf{\TFM}}
 
-\master
+\vspace{0.7cm}
 
-\vspace{0.4cm}
+\begin{mdframed}
+\begin{center}
+\vspace{0.5cm}
+\textsc{\titulo}
+\vspace{0.5cm}
+\end{center}
+\end{mdframed}
+
+\textsc{\master}
 
 \large
+\especialidad
+
 Curso Académico 2016/2017
 
-\vspace{0.8cm}
-
-\TFM
-
-\vspace{2.5cm}
-
-\LARGE
-\textsc{\titulo}
-
-\vspace{4cm}
-
-\large
-Autor : \nombreautor \\
-Tutor : \nombretutor
 \end{center}
+\begin{tabular}{p{4cm}p{10cm}}
+ &  Apellidos y Nombre del Alumno:\\
+
+ &  \vspace{-0.8cm}\begin{mdframed}\quad\quad\nombreautor\hfill\end{mdframed}\\
+ &  \vspace{-0.6cm}Directora TFM:\\
+ &  \vspace{-1.1cm}\begin{mdframed}\quad\quad\nombretutor\hfill\end{mdframed}
+\end{tabular}
+
+
 \end{titlepage}
 
-\newpage
-\mbox{}
-\thispagestyle{empty} % para que no se numere esta pagina
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Para firmar
 
 %\pagenumbering{gobble}
+\newpage
+\mbox{}
+\thispagestyle{empty} % para que no se numere esta pagina
+
 \ign{
 \clearpage
 \chapter*{}
@@ -74,7 +74,6 @@ Tutor : \nombretutor
 \textbf{Tutor :} \nombretutor
 
 \end{center}
-}
 
 %\vspace{1cm}
 %La defensa del presente \TFM se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2017, siendo calificada por el siguiente tribunal:
@@ -93,7 +92,7 @@ Tutor : \nombretutor
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Dedicatoria
-\ign{
+
 \chapter*{}
 %\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
@@ -103,19 +102,20 @@ mi familia / mi abuelo / mi abuela}
 }
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Agradecimientos
-
+\pagestyle{empty}
 \ign{\chapter*{Agradecimientos}\input{tex/agradecimientos}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
 
-\ign{\chapter*{Resumen} \input{tex/resumen}}
+\chapter*{Resumen} \input{tex/resumen}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
 
-\ign{\chapter*{Summary} \input{tex/abstract} \cleardoublepage}
+\chapter*{Summary} \input{tex/abstract} 
+\cleardoublepage
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -129,7 +129,15 @@ mi familia / mi abuelo / mi abuela}
 
 
 %%%% Índice de contenidos
+\thispagestyle{fancy}
+\cleardoublepage
 \tableofcontents 
+
+
+\renewcommand{\contentsname}{Índice de Contenidos}
+
+\fancypagestyle{plain}{}
+
 
 \ign{
 %%%% Índice de figuras

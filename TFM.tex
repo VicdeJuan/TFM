@@ -30,9 +30,8 @@
 
 
 \RequirePackage{MathUnicode} % Paquete para poder poner caracteres griegos y demás cosas raras.
-%PRETTY:\usepackage[a4paper, left=3.8cm, right=2.5cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
-%%% UGLY
-\usepackage[a4paper, left=2.5cm, right=2.5cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
+
+\usepackage[a4paper, left=3.8cm, right=2.5cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
 \usepackage{times}
 
 %\usepackage[utf8]{inputenc}
@@ -62,6 +61,7 @@
 \usepackage{breakcites}
 
 
+\newcommand{\ign}[1]{}
 
 
 \interfootnotelinepenalty=10000
@@ -70,12 +70,14 @@
 \usepackage{flafter}
 
 \usepackage{fancyhdr}
+
  
 \newcommand{\nombreautor}{V\'ictor de Juan Sanz\xspace}
 \newcommand{\nombretutor}{Desir\'e Garc\'ia L\'azaro\xspace}
 \newcommand{\titulo}{Gamificaci\'on: visión general y aplicación en el aula de Matemáticas\xspace}
-\newcommand{\TFM}{Trabajo de Fin de M\'aster\xspace}
-\newcommand{\master}{M\'aster en Formaci\'on del Profesorado, especialidad Matem\'aticas\xspace}
+\newcommand{\TFM}{Trabajo Fin de M\'aster\xspace}
+\newcommand{\master}{M\'aster Universitario en Formaci\'on del Profesorado de Educación Secundaria Obligatoria y Bachillerato, Formación Profesional y Enseñanza de Idiomas\xspace}
+\newcommand{\especialidad}{Matemáticas}
 %\newcommand{\master}{Máster en Formación del Profesorado: especialidad Matemáticas}
 
 \usepackage{newtxmath,newtxtext}
@@ -83,14 +85,25 @@
 
 \pagestyle{fancy}
 \fancyhf{}
-\rhead{\raisebox{1.15\height}{\nombreautor\quad\quad}}
-\lhead{\raisebox{-0.13\height}{\quad\quad\includegraphics[height=15mm]{img/Logo_header.png}}}
-\chead{Gamificaci\'on: visión general y\\
+
+
+\newcommand{\righthead}{\raisebox{1.15\height}{\nombreautor\quad}}
+\newcommand{\lefthead}{\raisebox{-0.13\height}{\quad\includegraphics[height=15mm]{img/Logo_header.png}}}
+\newcommand{\centerhead}{Gamificaci\'on: visión general y\\
 aplicación en el aula de Matemáticas}
+
+%\fancyhead[LE,RO]{\righthead}\fancyhead[RE,LO]{\lefthead}\fancyhead[CE,CO]{\centerhead}\fancyfoot[CE,CO]{\thepage}
+
+\rhead{\righthead}
+\lhead{\lefthead}
+\chead{\centerhead}
 \cfoot{\thepage}
+
+
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\headrule}{{
 \vspace{0.3cm}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
+
 
 
 \newcommand{\coment}[1]{\textit{#1}}
@@ -101,7 +114,6 @@ aplicación en el aula de Matemáticas}
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
 
-\newcommand{\ign}[1]{}
 
 \makeglossaries
 \input{src/glosario}
@@ -130,6 +142,7 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
+\pagestyle{fancy}
 \pagenumbering{arabic} % para empezar la numeración de página con números
 \chapter{Introducción}
 \input{tex/introduccion.tex}
