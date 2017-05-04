@@ -9,7 +9,7 @@
 \begin{center}
 \begin{tabular}[c]{c c}
 %\includegraphics[bb=0 0 194 352, scale=0.25]{logo} &
-\includegraphics[scale=0.25]{img/logo_vect.png} &
+\includegraphics[scale=0.25]{img/logoportada.png} &
 \begin{tabular}[b]{l}
 \Huge
 \textsf{UNIVERSIDAD} \\
@@ -52,8 +52,10 @@ Tutor : \nombretutor
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Para firmar
-\clearpage
+
 %\pagenumbering{gobble}
+\ign{
+\clearpage
 \chapter*{}
 \thispagestyle{empty} % para que no se numere esta pagina
 
@@ -72,62 +74,48 @@ Tutor : \nombretutor
 \textbf{Tutor :} \nombretutor
 
 \end{center}
+}
 
-\vspace{1cm}
-La defensa del presente \TFM se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2017, siendo calificada por el siguiente tribunal:
-
-
-\vspace{0.5cm}
-\textbf{Presidente:}
-
-\vspace{1.2cm}
-\textbf{Secretario:}
-
-\vspace{1.2cm}
-\textbf{Vocal:}
-
-
-\vspace{1.2cm}
-y habiendo obtenido la siguiente calificación:
-
-\vspace{1cm}
-\textbf{Calificación:}
-
-
-\vspace{1cm}
-\begin{flushright}
-Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2017
-\end{flushright}
+%\vspace{1cm}
+%La defensa del presente \TFM se realizó el día \qquad$\;\,$ de \qquad\qquad\qquad\qquad \newline de 2017, siendo calificada por el siguiente tribunal:
+%\vspace{0.5cm}
+%\textbf{Presidente:}
+%\vspace{1.2cm}
+%\textbf{Secretario:}
+%\vspace{1.2cm}
+%\textbf{Vocal:}
+%\vspace{1.2cm} y habiendo obtenido la siguiente calificación:
+%\vspace{1cm}
+%\textbf{Calificación:}
+%\vspace{1cm}
+%\begin{flushright} Fuenlabrada, a \qquad$\;\,$ de \qquad\qquad\qquad\qquad de 2017
+%\end{flushright}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Dedicatoria
-
+\ign{
 \chapter*{}
 %\pagenumbering{Roman} % para comenzar la numeracion de paginas en numeros romanos
 \begin{flushright}
 \textit{Dedicado a \\
 mi familia / mi abuelo / mi abuela}
 \end{flushright}
-
+}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Agradecimientos
 
-\chapter*{Agradecimientos}
-\input{tex/agradecimientos}
+\ign{\chapter*{Agradecimientos}\input{tex/agradecimientos}}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen
 
-\chapter*{Resumen}
-\input{tex/resumen}
+\ign{\chapter*{Resumen} \input{tex/resumen}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%% Resumen en inglés
 
-\chapter*{Summary}
-\input{tex/abstract}
-\cleardoublepage
+\ign{\chapter*{Summary} \input{tex/abstract} \cleardoublepage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -143,7 +131,7 @@ mi familia / mi abuelo / mi abuela}
 %%%% Índice de contenidos
 \tableofcontents 
 
-
+\ign{
 %%%% Índice de figuras
 \cleardoublepage
 
@@ -173,3 +161,4 @@ mi familia / mi abuelo / mi abuela}
  
 \printglossary[title=Glosario,toctitle=Glosario]
 \printglossary[title=Acrónimos,toctitle=Acrónimos,type=\acronymtype]
+}
