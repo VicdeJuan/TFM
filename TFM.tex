@@ -63,6 +63,24 @@
 
 \newcommand{\ign}[1]{}
 
+\addto\captionsspanish{
+   \renewcommand{\BOthers}[1]{et al.\hbox{}}%
+}
+\usepackage{apacite}
+\addto\captionsspanish{
+   \renewcommand{\BOthers}[1]{et al.\hbox{}}%
+}
+\bibliographystyle{apacite}
+
+\addto\captionsspanish{
+   \renewcommand{\BOthers}[1]{et al.\hbox{}}%
+}
+\usepackage{natbib}
+
+\addto\captionsspanish{
+   \renewcommand{\BOthers}[1]{et al.\hbox{}}%
+}
+
 
 \interfootnotelinepenalty=10000
 
@@ -127,6 +145,7 @@ aplicación en el aula de Matemáticas}
 
 
 \begin{document}
+\renewcommand{\BOthers}[1]{et al.\hbox{}}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -267,7 +286,6 @@ Propuestas de Gamificación para otros cursos y otras asignaturas.
 
 % Las siguientes dos instrucciones es todo lo que necesitas
 % para incluir las citas en la memoria
-\bibliographystyle{apalike}
 \bibliography{memoria}  % memoria.bib es el nombre del fichero que contiene
 % las referencias bibliográficas. Abre ese fichero y mira el formato que tiene,
 % que se conoce como BibTeX. Hay muchos sitios que exportan referencias en
