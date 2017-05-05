@@ -7,16 +7,14 @@
 \section{Estado actual de la Educación de Matemáticas en España}
 \label{sec:EstadoEducacionMates}
 
-En esta sección se introducirá al lector en la situación actual de la enseñanza de Matemáticas en España. 
-%
 Se tratarán 2 temas fundamentales: la comparativa de España con otros países en la enseñanza de Matemáticas y las actitudes y problemáticas de la educación de Matemáticas en España, más concretamente, los componentes de la actitud de rechazo de algunos estudiantes.
 
 
-\paragraph{Informes Internacionales (en Matemáticas)} 
+%\paragraph{Informes Internacionales (en Matemáticas)} 
 
 Existen 2 informes internacionales importantes que analizan la competencia matemática: los informes \gls{PISA} y los informes \gls{TIMSS}. 
 %
-Para la elaboración de este trabajo se han utilizado exclusivamente los informes \gls{PISA} por varias razones. 
+%Para la elaboración de este trabajo se han utilizado exclusivamente los informes \gls{PISA} por varias razones. 
 %
 Los informes \gls{PISA} se centran en personas de 15 ó 16 años, mientras que, en España, los informes \gls{TIMSS} se están aplicando en 4 E.P.\footnote{El \gls{INEE} así lo especifica en \cite{InformeTimss}.} 
 %
@@ -39,6 +37,9 @@ Año & Posición España & Puntuación España & Media OCDE & Media UE\\\hline
 2012 & 33 & 484 & 494 & 489\\
 2015 & 29 & 486 & 490 & 493
 \end{tabular}
+\vspace{0.3cm}
+
+\small{Fuente: elaboración propia a partir de los informtes \citePisa{2012;2015}.}
 \end{table}
 
 No obstante, es importante mencionar que no todas las comunidades autónomas obtienen los mismos resultados. 
@@ -61,14 +62,14 @@ Esta situación es clara e idealmente mejorable.
 Por otro lado, el porcentaje de estudiantes excelentes en España se mantiene estable en torno al 7\% u 8\% en todos los años, siendo inferior a la media internacional.
 
 \begin{figure}[hbt]
-\begin{center}
+\centering
+\caption{Code estudiantes rezagados (imagen superior) y excelentes (imagen inferior) en España y en los países OCDE. }
+\label{fig::PisaRezEx}
 \includegraphics[scale=0.45]{img/PisaRezagados.png}
 \includegraphics[scale=0.45]{img/PisaExcelentes.png}
-\caption{Comparativa de estudiantes rezagados (imagen superior) y excelentes (imagen inferior) en España y en los países OCDE. }
-\label{fig::PisaRezEx}
-\end{center}
+
 \vspace{-0.5cm}
-\small{Fuente: Elaboración propia a partir de los informes PISA.}
+\small{Fuente: Elaboración propia a partir de los informes PISA desde 2002 hasta 2015.}
 \end{figure}
 \FloatBarrier
 
@@ -77,7 +78,7 @@ Sabiendo cuáles son los resultados obtenidos en España y un marco general de l
 Debido a que el informe PISA es un informe descriptivo, vamos a recurrir a \cite{ActitudesHaciaMates} para descubrir algunos aspectos influyentes en la educación matemática en España.
 
 
-\paragraph{Estudio Nacional}
+%\paragraph{Estudio Nacional}
 
 \citet*{ActitudesHaciaMates} realizan un estudio transversal para explorar las actitudes hacia las Matemáticas de alumnos en el sistema educativo español, desde tercero de E.P. hasta el primer curso universitario. 
 %
@@ -89,9 +90,11 @@ El estudio apoya la existencia del siguiente círculo vicioso:
 
 \begin{figure}[hbt]
 \centering
-\includegraphics[scale=0.57]{img/circuloVicioso.png}
 \caption{Circulo vicioso influyente en la actitud de rechazo hacia las Matemáticas según \citep{ActitudesHaciaMates}}
 \label{fig::circuloVicioso}
+\includegraphics[scale=0.57]{img/circuloVicioso.png}
+
+\small{Fuente: elaboración propia.}
 \end{figure}
 \FloatBarrier
 
@@ -110,17 +113,20 @@ Parece que en la E.S.O. donde se produce un gran aumento del rechazo hacia las M
 %
 \footnote{El modelo tiene una tasa de acierto en las predicciones del 97\%.}.
 %
-A continuación presentamos las 7 variables, ordenadas según su influencia: 
+La variable más influyente del modelo es la percepción de la materia en la escala aburrida-divertida (mayor aburrimiento provoca mayor rechazo), seguida de la percepción de la materia como fácil o difícil (mayor dificultad percibida conlleva mayor rechazo) y de la percepción sobre la autocompetencia para las matemáticas (menor competencia, mayor rechazo).
 %
-\begin{itemize}
-\vspace{-0.4cm}\item Percepción de materia aburrida-divertida.
-\vspace{-0.4cm}\item Percepción de materia fácil-difícil.
-\vspace{-0.4cm}\item Percepción de competencias para las Matemáticas.
-\vspace{-0.4cm}\item Influencia del profesor sobre el rechazo (El rechazo hacia las Matemáticas se debe, en cierta medida, a los profesores de Matemáticas que el estudiante ha tenido). La relación es lineal: valores altos de rechazo correlacionan con valores altos de influencia, mientras que valores bajos de rechazo correlacionan con valores bajos de influencia.
-\vspace{-0.4cm}\item Atribución de causalidad de éxito en Matemáticas: los estudiantes consideran que las aptitudes ejercen una mayor influencia en el desempeño que la dedicación y el estudio.
-\vspace{-0.4cm}\item Competencia percibida para el cálculo mental.
-\vspace{-0.4cm}\item Dificultad percibida para el aprendizaje matemático.
-\end{itemize}
+A estas 3 variables subjetivas e internas del estudiante le sigue la influencia del profesor sobre el rechazo, que se valora si el rechazo hacia las Matemáticas se debe, en cierta medida, a los profesores de Matemáticas que el estudiante ha tenido.
+%
+La relación es lineal: valores altos de rechazo correlacionan con valores altos de influencia, mientras que valores bajos de rechazo correlacionan con valores bajos de influencia.
+%
+La atribución de causalidad de éxito en Matemáticas es otra variable influyente. 
+%
+Los estudiantes pueden considerar que las aptitudes ejercen una mayor influencia en el desempeño que la dedicación y el estudio, lo cual aumentará el rechazo hacia las matemáticas, ya que creen que no depende tanto de su esfuerzo y dedicación como de su predisposición genética.
+%
+Asimismo, la competencia percibida para el cálculo mental es también influyente.
+%
+Por último, la dificultad percibida para el aprendizaje matemático.
+
 
 Llama la atención que la mayoría de las variables son procesos perceptivos de los estudiantes.
 %
@@ -130,11 +136,9 @@ Sin embargo, que sean estas las variables más influyentes ofrece un gran abanic
 %
 Una estrategia metodológica diferente podría influir positivamente en algunas de esas percepciones y modificarlas para romper el círculo vicioso.
 
-\paragraph{Conclusión:} El presente trabajo pretende ofrecer una respuesta a la situación de la educación de Matemáticas actual.
+Asimismo, tras el análisis de la situación de la educación de Matemáticas actual,
 %
-Ofrecemos una propuesta metodológica para romper el círculo vicioso (ver \ref{fig::circuloVicioso}), sobretodo en los eslabones de la desmotivación y el aburrimiento.
+se ofrece una propuesta metodológica para romper el círculo vicioso (ver \ref{fig::circuloVicioso}), sobretodo en los eslabones de la desmotivación y el aburrimiento.
 
-Por otro lado, creemos que esta propuesta metodológica tiene mucho potencial en Educación Secundaria, ya que es donde se produce el aumento brusco del rechazo.
-%
 Si en los cursos de la E.S.O. se consiguiera influir en las percepciones de los estudiantes aparejando Matemáticas y diversión se podrían reducir drásticamente el porcentaje de alumnos rezagados en Matemáticas (ver \ref{fig::PisaRezEx}) y mejorar el nivel matemático general, lo que se reflejaría en los informes internacionales.
 

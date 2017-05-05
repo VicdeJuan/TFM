@@ -36,9 +36,9 @@ Curso Académico 2016/2017
 \begin{tabular}{p{4cm}p{10cm}}
  &  Apellidos y Nombre del Alumno:\\
 
- &  \vspace{-0.8cm}\begin{mdframed}\quad\quad\nombreautor\hfill\end{mdframed}\\
+ &  \vspace{-0.8cm}\begin{mdframed}\quad\quad de Juan Sanz, Víctor\hfill\end{mdframed}\\
  &  \vspace{-0.6cm}Directora TFM:\\
- &  \vspace{-1.1cm}\begin{mdframed}\quad\quad\nombretutor\hfill\end{mdframed}
+ &  \vspace{-1.1cm}\begin{mdframed}\quad\quad García Lázaro, Desiré\hfill\end{mdframed}
 \end{tabular}
 
 
@@ -129,17 +129,18 @@ mi familia / mi abuelo / mi abuela}
 
 
 %%%% Índice de contenidos
+\renewcommand{\contentsname}{Índice de Contenidos}
+\fancypagestyle{plain}{}
 \thispagestyle{fancy}
 \cleardoublepage
 \tableofcontents 
 
 
-\renewcommand{\contentsname}{Índice de Contenidos}
-
-\fancypagestyle{plain}{}
 
 
-\ign{
+
+
+
 %%%% Índice de figuras
 \cleardoublepage
 
@@ -161,12 +162,12 @@ mi familia / mi abuelo / mi abuela}
 \fi
 \listoftables % indice de tablas
 
-\iftocs
-\addcontentsline{toc}{chapter}{Acrónimos}% para que aparezca en el indice de contenidos
-\else
-\fi
+%\fancypagestyle{plain}{\cfoot{\thepage}}
+%\iftocs
+%\addcontentsline{toc}{chapter}{Acrónimos}% para que aparezca en el indice de contenidos
+%\else
+%\fi
 
  
-\printglossary[title=Glosario,toctitle=Glosario]
-\printglossary[title=Acrónimos,toctitle=Acrónimos,type=\acronymtype]
-}
+%\printglossary[title=Glosario,toctitle=Glosario]
+%\printglossary[title=Acrónimos,toctitle=Acrónimos,type=\acronymtype]

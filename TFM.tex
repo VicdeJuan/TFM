@@ -35,7 +35,7 @@
 \usepackage{times}
 
 %\usepackage[utf8]{inputenc}
-\usepackage[spanish]{babel} % Comenta esta línea si tu memoria es en inglés
+\usepackage[spanish,es-tabla]{babel} % Comenta esta línea si tu memoria es en inglés
 \usepackage{url}
 %\usepackage[dvipdfm]{graphicx}
 \usepackage{graphicx}
@@ -98,8 +98,14 @@
 \newcommand{\especialidad}{Matemáticas}
 %\newcommand{\master}{Máster en Formación del Profesorado: especialidad Matemáticas}
 
+
 \usepackage{newtxmath,newtxtext}
 \usepackage{seqsplit}
+
+\renewcommand{\concept}[2][None]{\text{#2}% IGN
+  \marginpar{\footnotesize \textit{\makefirstuc{#2}}}%
+  \renewcommand{\IS}{!}%
+  \ifthenelse{\equal{#1}{None}}{\index{#2}}{\index{#1}}}
 
 \pagestyle{fancy}
 \fancyhf{}
@@ -122,12 +128,21 @@ aplicación en el aula de Matemáticas}
 \renewcommand{\headrule}{{
 \vspace{0.3cm}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
 
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+\usepackage{titlesec} 
+\titleformat{\chapter}
+  {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+
 
 
 \newcommand{\coment}[1]{\textit{#1}}
 \renewcommand{\coment}[1]{}
 %\newcommand{\citePisa}[1]{\cite{InformePisa#1}}
 \newcommand{\citePisa}[1]{(\gls{PISA}, #1)}
+
 
 
 \renewcommand{\baselinestretch}{1.5}  %% Interlineado
@@ -149,6 +164,7 @@ aplicación en el aula de Matemáticas}
 \renewcommand{\BAvailFrom}[1]{Recuperado de\hbox{}}
 \renewcommand{\BRetrievedFrom}[1]{Recuperado de }
 \renewcommand{\BRetrieved}[1]{}
+\renewcommand{\bibname}{Bibliografía}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -171,6 +187,8 @@ aplicación en el aula de Matemáticas}
 
 
 \input{tex/marco}
+
+\input{tex/educacionGamificada}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
