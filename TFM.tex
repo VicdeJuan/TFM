@@ -59,6 +59,87 @@
             pdfkeywords={Gamificaci\'on, Educaci\'on, Matem\'aticas}]{hyperref}
 			
 \usepackage{breakcites}
+\usepackage{enumitem}
+\usepackage{multirow}
+\usepackage{graphicx}
+
+\usepackage{array}
+\usepackage{placeins}
+\usepackage{flafter}
+\usepackage{fancyhdr}
+\usepackage{newtxmath,newtxtext}
+\usepackage{seqsplit}
+\usepackage{titlesec} 
+\usepackage{hyperref}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%        CABECERAS & TÍTULOS         %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+ 
+\newcommand{\nombreautor}{V\'ictor de Juan Sanz\xspace}
+\newcommand{\nombretutor}{Desir\'e Garc\'ia L\'azaro\xspace}
+\newcommand{\titulo}{Gamificaci\'on: visión general y aplicación en el aula de Matemáticas\xspace}
+\newcommand{\TFM}{Trabajo Fin de M\'aster\xspace}
+\newcommand{\master}{M\'aster Universitario en Formaci\'on del Profesorado de Educación Secundaria Obligatoria y Bachillerato, Formación Profesional y Enseñanza de Idiomas\xspace}
+\newcommand{\especialidad}{Matemáticas}
+%\newcommand{\master}{Máster en Formación del Profesorado: especialidad Matemáticas}
+
+
+
+
+\pagestyle{fancy}
+\fancyhf{}
+
+\renewcommand{\headrulewidth}{0.4pt}
+\renewcommand{\headrule}{{
+\vspace{0.3cm}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
+
+\renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+
+\titleformat{\chapter}
+  {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{}
+\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+
+
+
+\newcommand{\righthead}{\raisebox{1.15\height}{\nombreautor\quad}}
+\newcommand{\lefthead}{\raisebox{-0.13\height}{\quad\includegraphics[height=15mm]{img/Logo_header.png}}}
+\newcommand{\centerhead}{Gamificaci\'on: visión general y\\
+aplicación en el aula de Matemáticas}
+
+%\fancyhead[LE,RO]{\righthead}\fancyhead[RE,LO]{\lefthead}\fancyhead[CE,CO]{\centerhead}\fancyfoot[CE,CO]{\thepage}
+
+\rhead{\righthead}
+\lhead{\lefthead}
+\chead{\centerhead}
+\cfoot{\thepage}
+
+
+\renewcommand{\baselinestretch}{1.5}  %% Interlineado
+
+\setlist{topsep=0ex,itemsep=-1ex,partopsep=1ex,parsep=1ex}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%            Bibliografía           %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \newcommand{\ign}[1]{}
@@ -75,7 +156,9 @@
 \addto\captionsspanish{
    \renewcommand{\BOthers}[1]{et al.\hbox{}}%
 }
-\usepackage{natbib}
+\usepackage[sort&compress]{natbib}
+\usepackage{usebib}
+
 
 \addto\captionsspanish{
    \renewcommand{\BOthers}[1]{et al.\hbox{}}%
@@ -84,68 +167,94 @@
 
 \interfootnotelinepenalty=10000
 
-\usepackage{placeins}
-\usepackage{flafter}
-
-\usepackage{fancyhdr}
-
- 
-\newcommand{\nombreautor}{V\'ictor de Juan Sanz\xspace}
-\newcommand{\nombretutor}{Desir\'e Garc\'ia L\'azaro\xspace}
-\newcommand{\titulo}{Gamificaci\'on: visión general y aplicación en el aula de Matemáticas\xspace}
-\newcommand{\TFM}{Trabajo Fin de M\'aster\xspace}
-\newcommand{\master}{M\'aster Universitario en Formaci\'on del Profesorado de Educación Secundaria Obligatoria y Bachillerato, Formación Profesional y Enseñanza de Idiomas\xspace}
-\newcommand{\especialidad}{Matemáticas}
-%\newcommand{\master}{Máster en Formación del Profesorado: especialidad Matemáticas}
 
 
-\usepackage{newtxmath,newtxtext}
-\usepackage{seqsplit}
+\newcommand{\citePisa}[1]{(\gls{PISA}, #1)}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%            ABREVIATURAS           %%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\defcitealias{LOMCE}{Ley Org\'anica 8/2013, de 9 de diciembre, para la mejora de la calidad educativa}
+\defcitealias{BOE}{Real Decreto 1105/2014, de 26 de diciembre, por el que se establece el curr\'iculo b\'asico de la Educaci\'on Secundaria Obligatoria y del Bachillerato.}
+\defcitealias{BOCM}{Decreto 48/2015, de 14 de mayo, del Consejo de Gobierno, por el que se establece para la Comunidad de Madrid el curr\'iculo de la Educaci\'on Secundaria Obligatoria}
+
+
+
+
+\newif\ifboe
+\boefalse
+\newcommand{\boe}{
+  \ifboe
+      BOE\xspace
+  \else
+    \citetalias{BOE} (de ahora en adelante BOE)\xspace
+    \boetrue
+  \fi}
+
+\newif\ifbocm
+\bocmfalse
+\newcommand{\bocm}{
+  \ifbocm
+      BOCM\xspace
+  \else
+    \citetalias{BOCM} (de ahora en adelante BOCM)\xspace
+    \bocmtrue
+  \fi}
+
+\newif\iflomce
+\lomcefalse
+\newcommand{\lomce}{
+  \iflomce
+      LOMCE\xspace
+  \else
+    \citetalias{LOMCE} (de ahora en adelante LOMCE)\xspace
+    \lomcetrue
+  \fi}
+
+\newcommand{\eaes}{Estándares de Aprendizaje Evaluables\xspace}
+\newcommand{\eae}{Estándar de Aprendizaje Evaluable\xspace}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%             OTROS           %%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 \renewcommand{\concept}[2][None]{\text{#2}% IGN
   \marginpar{\footnotesize \textit{\makefirstuc{#2}}}%
   \renewcommand{\IS}{!}%
   \ifthenelse{\equal{#1}{None}}{\index{#2}}{\index{#1}}}
 
-\pagestyle{fancy}
-\fancyhf{}
-
-
-\newcommand{\righthead}{\raisebox{1.15\height}{\nombreautor\quad}}
-\newcommand{\lefthead}{\raisebox{-0.13\height}{\quad\includegraphics[height=15mm]{img/Logo_header.png}}}
-\newcommand{\centerhead}{Gamificaci\'on: visión general y\\
-aplicación en el aula de Matemáticas}
-
-%\fancyhead[LE,RO]{\righthead}\fancyhead[RE,LO]{\lefthead}\fancyhead[CE,CO]{\centerhead}\fancyfoot[CE,CO]{\thepage}
-
-\rhead{\righthead}
-\lhead{\lefthead}
-\chead{\centerhead}
-\cfoot{\thepage}
-
-
-\renewcommand{\headrulewidth}{0.4pt}
-\renewcommand{\headrule}{{
-\vspace{0.3cm}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
-
-\renewcommand{\thesection}{\thechapter.\arabic{section}}
-
-\usepackage{titlesec} 
-\titleformat{\chapter}
-  {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{}
-\titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
-
-
 
 
 \newcommand{\coment}[1]{\textit{#1}}
 \renewcommand{\coment}[1]{}
-%\newcommand{\citePisa}[1]{\cite{InformePisa#1}}
-\newcommand{\citePisa}[1]{(\gls{PISA}, #1)}
+
+\newcommand{\mylabel}[2]{#2\def\@currentlabel{#2}\labeltext{#2}{#1}}
+\MakeRobust{\ref}% avoid expanding it when in a textual label
+\makeatletter
+\newcommand{\labeltext}[2]{%
+  \@bsphack
+  \csname phantomsection\endcsname % in case hyperref is used
+  \def\@currentlabel{#1}{\label{#2}}%
+  \@esphack
+}
+\makeatother
 
 
 
-\renewcommand{\baselinestretch}{1.5}  %% Interlineado
+
 
 
 \makeglossaries
@@ -165,6 +274,7 @@ aplicación en el aula de Matemáticas}
 \renewcommand{\BRetrievedFrom}[1]{Recuperado de }
 \renewcommand{\BRetrieved}[1]{}
 \renewcommand{\bibname}{Bibliografía}
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -196,76 +306,8 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\chapter{Gamificar las Matemáticas}
+\input{tex/gamificarMates}
 
-\section{¿Se pueden gamificar las Matemáticas?}
-
-Lo siguiente que necesitamos, si estamos convencidos de que la Gamificación puede ser una buena metodología, es tratar cómo se puede gamificar un aula.
-%
-Dedicaremos el próximo capítulo a ello.
-
-\section{Estado de la Ley y del currículo}
-
-Primero: ¿Permite o incluso anima la ley al empleo de esta metodología?
-
-Segundo: Necesitamos elegir un curso y su currículo.
-
-\subsection{Elección del curso para Gamificar}
-
-El curso elegido es: porque...
-
-\subsubsection{Contenidos de ese curso}
-\subsubsection{Estándares de Aprendizaje Evaluables}
-
-
-\section{Elementos de la gamificación aplicables al aula de Matemáticas}
-
-\paragraph{Dinámicas}
-
-\subparagraph{Narrativa}
-\subparagraph{Progresión}
-
-\paragraph{Mecánicas}
-
-Las mecánicas que utilizaremos serán:
-\subparagraph{Retos},
-\subparagraph{Competición y cooperación},
-\subparagraph{Feedback},
-\subparagraph{Premios}
-
- Los premios serán: logros, medallas, puntos (que describiremos a continuación).
-
-\paragraph{Elementos}
-
-Los elementos que utilizaremos serán:
-\subparagraph{Niveles},
-\subparagraph{Logros},
-\subparagraph{Puntos},
-\subparagraph{Medallas},
-\subparagraph{Jefes finales}...
-
-\section{Programación anual Gamificada}
-
-\subsection{Aprendizaje competencial}
-\subsection{Cobertura de los contenidos}
-\subsection{Incorporación de los Estándares de Aprendizaje Evaluables}
-
-Matriz de trazabilidad entre los Estándares de Aprendizaje Evaluables y los componentes de la Gamificación:
-\begin{table}[hbtp]
-\caption{Matriz de trazabilidad entre los Estándares de Aprendizaje Evaluables y los componentes de la Gamificación.}
-\label{Trazabilidad}
-\begin{tabular}{c|c}
-& Estándares de Aprendizaje Evaluables\\\hline
-Elementos & \\\hline
-\end{tabular}
-\end{table}
-
-
-\section{Evaluación de la gamificación}
-
-Es fundamental saber si la gamificación tal como se ha llevado a cabo ha merecido la pena, qué aspectos son mejorables y cuáles hay que mantener.
-%
-Podríamos utilizar el marco propuesto por \cite{EvaluacionGamificacion} para autoevaluar la gamificación realizada.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -297,6 +339,7 @@ Propuestas de Gamificación para otros cursos y otras asignaturas.
 \cleardoublepage
 \appendix
 
+\input{tex/modelizacion}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

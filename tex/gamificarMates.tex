@@ -1,0 +1,517 @@
+%!TEX root = ../TFM.tex
+
+\newcommand{\arab}{al-Karaji}
+\newcommand{\Arab}{Al-Karaji}
+\newcommand{\logro}[2]{\labeltext{#1\xspace}{logro::#2} #1\xspace}
+
+
+\chapter{Gamificar las Matemáticas}
+
+Lo que debes reflfejar en este capítulo es cómo lo has hecho, cual es tu objetivo, como organizas el aula, como lo evaluas y qué resultados obtienes.
+
+
+
+\section{Diseño de la gamificación}
+
+En \ref{PasosGamificar} se ha tratado, en términos generales, la propuesta para diseñar una gamificación de \cite{kapp2013gamification}. 
+%
+Se va a utilizar esa propuesta para guiar el proceso de diseño de la gamificación. 
+%
+Para ello, se irán recorriendo las etapas propuestas.
+
+El problema se ha tratado con amplitud en la sección \ref{chap:intro}, estudiando los comportamientos existentes. 
+%
+Por otro lado, el comportamiento deseado sería que los estudiantes estuvieran más motivados y comprometidos con la asignatura, dispuestos a trabajar activamente en clase y trabajaran en casa.
+%
+Además, el objetivo competencial está definido por el \bocm y se especificará más adelante (ver \ref{tbl:Matrizdetodo}).
+%
+\bocmfalse
+%
+El último aspecto de las preguntas base es la valoración de los aspectos que puedan darnos retroalimentación sobre el proceso.
+%
+La manera en la que se va a conseguir eso es mediante el diseño de un itinerario de logros y puntos que los alumnos van recorriendo.
+%
+De esta manera se puede anticipar fácilmente si hay algún alumno rezagado simplemente observando los logros adquiridos y los puntos.
+%
+No obstante, en cada sesión y tarea se especificará un mínimo a alcanzar por parte de los alumnos.
+
+En el segundo paso se trabajan las preguntas prácticas.
+%
+El público objetivo de la gamificación son alumnos de secundaria del sistema educativo español. 
+%
+Debido a que esta gamificación no se plantea para ser aplicada en un centro en concreto, no se pueden determinar con exactitud los conocimientos previos y habilidades ni los tipos de jugadores concretos a los que esta propuesta se dirige.
+%
+No obstante, en la sección \ref{sec:taxonomy} se han tratado los tipos de jugadores para que el docente, en el momento de implantación de esta gamificación pueda definir los tipos de jugadores concretos a quienes se dirige la gamificación.
+%
+Por otro lado, la definición logística y técnica de la gamificación se encuentra especificado a lo largo de la descripción de la unidad didáctica (ver sección \ref{sec:UD}), teniendo en cuenta los recursos existentes y las habilidades del docente.
+
+Asimismo, el sistema de valoración también está incluido en la unidad didáctica, anticipando durante el diseño los posibles fallos del sistema para conseguir una evaluación lo más justa posible.
+
+El último paso de la propuesta de \cite{kapp2013gamification} sería la puesta en marcha del sistema. 
+%
+Desafortunadamente, esta gamificación no ha sido llevada al aula todavía.
+
+\subsection{Marco legal de aplicación}
+
+
+Primero: ¿Permite o incluso anima la ley al empleo de esta metodología?
+\todo{Completar}
+
+Segundo: Quien define qué contenidos. \lomce,\boe,\bocm y abreviaturas para referirnos a ellos.
+
+\subsection{Elección del curso para Gamificar}
+
+El curso elegido para desarrollar la propuesta es 3 de ESO por ser el curso en el que se produce un aumento del rechazo hacia las Matemáticas (ver sección \ref{sec:estudioNacional}) 
+%
+y por ser también la percepción de la asignatura como divertida menor en este curso (40,46\% en 3 de ESO frente a 54,46\% en Bachillerato y 68,51\% en 1 de ESO) \cite{ActitudesHaciaMates}.
+
+Dentro del curso se ha elegido desarrollar una unidad didáctica sobre los polinomios porque son el primer curso donde se ven con mayor prominencia y su mal aprendizaje puede lastrar al alumno hasta los primeros cursos universitarios.
+%
+La factorización de polinomios, por ejemplo, es un recurso importante en la diagonalización de matrices, contenido fundamental en Álgebra de cualquier grado en Ingeniería o Administración y Dirección de Empresas.
+%
+Si en este curso se consigue un aprendizaje consolidado y duradero, los estudiantes podrán desempeñar y aprovechar mejor los cursos venideros.
+
+
+\section{Unidad didáctica gamificada}
+
+\label{sec:UD}
+%
+Esta unidad didáctica pertenece a la asignatura Matemáticas orientadas a las ciencias académicas de 3 ESO. 
+%
+Los contenidos de la asignatura, definidos en el \boe y matizados por el \bocm, se dividen en 5 bloques:
+1) Procesos métodos y actitudes en las matemáticas. 
+2) Números y álgebra: Números racionales, números decimales, polinomios, sucesiones, ecuaciones y sistemas.
+3) Geometría: geometría plana, geometría del espacio, globo terráqueo, uso de herramientas tecnológicas.
+4) Funciones.
+5) Estadística y probabilidad.
+
+Esta unidad didáctica pertenece al bloque de Números y Álgebra para tratar el punto 6 de los contenidos del bloque 2 según \bocm: Polinomios. Expresiones algebraicas.
+%
+Este punto incluye:
+%
+Transformación de expresiones algebraicas, igualdades notables, operaciones elementales con polinomios.Ecuaciones de primer y segundo grado con una incógnita y resolución por el método algebraico y gráfico de ecuaciones de primer y segundo grado.
+%
+Más adelante, en la tabla \ref{tbl:Matrizdetodo} se expondrán más claramente los Contenidos, Criterios de Evaluación y \eaes especificados que serán tratados.
+
+Esta unidad didáctica desarrollará todo lo relativo a polinomios y su manejo, excluyendo las ecuaciones y sistemas de ecuaciones que corresponderán a otra unidad didáctica diferente.
+
+\paragraph{Conocimientos previos}
+
+Es fundamental que los alumnos recuerden las propiedades de las potencias de exponentes naturales con las que llevan trabajando al menos 2 cursos.
+%
+Asimismo, sería conveniente que los estudiantes recordaran qué es una expresión algebraica y cómo calcular su valor numérico.
+%
+No obstante, esto último será repasado en el desarrollo de esta unidad didáctica para corregir posibles desequilibrios entre los niveles de los alumnos.
+
+
+
+\subsection{Contenidos y Estándares de Aprendizaje Evaluables}
+
+En la tabla \ref{tbl:Matrizdetodo} se encuentran resumidos los Contenidos, Criterios de Evaluación y  Estándares de Aprendizaje Evaluables de la unidad didáctica desarrollada.
+
+\begin{table}[hbt]
+\centering
+\caption{Matriz de Contenidos, Criterios de Evaluación y  Estándares de Aprendizaje Evaluables de la unidad didáctica}
+\label{tbl:Matrizdetodo}
+\begin{tabular}{|p{0.24\linewidth}|p{0.3\linewidth}|p{0.42\linewidth}|}
+\hline
+ \multicolumn{1}{|c|}{Contenidos} & \multicolumn{1}{|c|}{Criterios de Evaluación} & \multicolumn{1}{c|}{\eaes}
+\\\hline
+
+\mylabel{C261}{Cont. 2.6.1} Transformación de expresiones algebraicas. 
+&
+\multirow{3}{\linewidth}{\mylabel{CE23}{C.E. 2.3} Utilizar el lenguaje algebraico para expresar una propiedad o relación dada mediante un enunciado, extrayendo la información relevante y transformándola.\vfill}
+& 
+\mylabel{EAE3.1}{E.A.E. 3.1}: Realiza operaciones con polinomios y los utiliza en ejemplos de la vida cotidiana.
+\\\cline{1-1} \cline{3-3} 
+
+\mylabel{C262}{Cont. 2.6.2} Igualdades notables. 
+&
+& 
+\mylabel{EAE3.2}{E.A.E. 3.2}: Conoce y utiliza las identidades notables correspondientes al cuadrado de un binomio y una suma por diferencia, y las aplica en un contexto adecuado. 
+\\\cline{1-1} \cline{3-3} 
+
+\mylabel{C263}{Cont. 2.6.3} Operaciones elementales con polinomios. 
+&
+&
+\mylabel{EAE3.3}{E.A.E. 3.3}: Factoriza polinomios de grado 4 con raíces enteras mediante el uso combinado de la regla de Ruffini, identidades notables y extracción del factor común.
+\\\hline
+\end{tabular}
+\end{table}
+\FloatBarrier
+
+\subsection{Metodología:}
+
+La metodología principal aplicada en esta unidad didáctica será la gamificación.
+%
+Ésta se apoyará de otras estrategias metodológicas como el trabajo cooperativo para algunos trabajos concretos, el trabajo autónomo y la explicación en la pizarra por parte del docente.
+
+Con esta metodología específica se pretende aportar las condiciones necesarias para que el aprendizaje de los alumnos sea significativo, funcional y duradero.
+%
+También aporta un enfoque lúdico y emocionante al aprendizaje y es bien sabido que sin emoción no se produce aprendizaje.
+%
+Además, esta elección metodológica permite hacer protagonista al alumno durante el proceso logrando que se involucre activamente en el proceso de enseñanza-aprendizaje.
+%
+Por último es una metodología tremendamente flexible que permite sinergias con otras metodologías que serán aprovechadas, como el aprendizaje cooperativo ya mencionado y la clase invertida.
+
+
+Otro aspecto de la \todo{Tal vez debería ir en recursos...} estrategia metodológica es la utilización de herramientas \gls{TIC}.
+%
+Los ejercicios de trabajo autónomo por parte del estudiante en horario no lectivo serán realizados en una plataforma online (edmodo) de tal manera que el estudiante pueda recibir feedback inmediato de su desempeño.
+%
+Salvo que se especifique lo contrario, no es relevante el tiempo empleado en la resolución de estos ejercicios sino su resolución satisfactoria o insatisfactoria.
+%
+Se fomentará la corrección en las respuestas más que la rapidez con un bonus acumulativo por respuestas correctas, además de ofrecer la posibilidad de retomar el ejercicio un número de veces determinado.
+%
+Estos parámetros dependerán de cada set de ejercicios y se especificarán pertinentemente.
+%
+En otros casos, se utilizará la clase invertida, proponiendo un vídeo para trabajar en casa y trabajar en clase los contenidos aprendidos con el vídeo.
+
+
+En esta unidad didáctica se está priorizando el aprendizaje activo de los contenidos y competencias otorgando menos importancia a otras habilidades transversales y necesarias como tomar apuntes y notas en clase. 
+%
+Esta competencia es muy útil (aunque cada vez más en desuso) y se priorizará en otras unidades didácticas del curso. 
+%
+Para esta utilizaremos el libro de texto de apoyo. Para esta unidad didáctica, al no estar suscrita a ningún centro utilizaremos un material didáctico elaborado por \citeauthor{MareaVerde} en \citeyear{MareaVerde} en el movimiento de la Marea Verde \cite{MareaVerde}.
+
+No importa el tiempo empleado. 
+%
+Puntos por hacerlo y bonus acumulativo\footnote{(cuantos más tengas mejor, más puntos ganas). ¿Se podrá hacer esto en edmodo automático?} por tenerlos bien.
+
+
+\subsubsection{Concreciones metodológicas}
+
+La narrativa de la Gamificación consistirá en la simulación de un instituto de investigación histórica.
+%
+Los alumnos son los historiadores con una mayor competencia matemática y se necesita su ayuda para encontrar un alijo árabe que se escondió en Madrid en 1083, justo antes de la reconquista cristiana.
+
+Se ha encontrado un documento que no se ha conseguido descifrar y se cree que los alumnos van a ser capaces de resolverlo.
+%
+%
+Este documento utiliza las matemáticas de Abu Bekr ibn Muhammad ibn al-Husayn al-Karaji, el primero en definir los monomios $x$,$x^2$... y proporcionar reglas para su producto.\cite{MatArabe}
+%
+Para poder resolver el enigma será necesario que aprendamos las matemáticas de Al-Ándalus.
+
+Será necesario que en su cuaderno incorporen un diario del investigador, en el que ir tomando notas de lo que les resulte importante, dejando constancia de los avances que van realizando, etc.
+%
+En cada clase se irán obteniendo partes de las coordenadas geográficas de un lugar de Madrid y se irán aprendiendo herramientas para resolver el problema.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%            TEMPORALIZACIÓN           %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Temporalización}
+
+La unidad didáctica se divide en $n$ sesiones.
+
+\subsubsection{Sesión 0: Introducción}
+
+
+\paragraph{Contenidos}
+
+Los contenidos a tratar en esta sección serán:
+\begin{itemize}
+
+\item Expresiones algebraicas.
+\item Monomios y operaciones básicas.
+\item Valor numérico.
+\end{itemize}
+
+\paragraph{Desarrollo de la sesión: }
+
+En esta primera sesión introductoria se explicará la narrativa de la gamificación: 
+%
+los alumnos son investigadores que buscan desentrañar un misterio y para ello, a veces formarán equipos de investigación, otras veces trabajarán autónomamente.
+%
+El objetivo no será ganar y ser el primero en descubrirlo, sino que, como todos somos investigadores al servicio de la ciencia, queremos desentrañar la verdad y que todos la entendamos.
+%
+Se trata de colaborar.
+
+El misterio a resolver tiene ya 10 siglos.
+%
+\Arab, nacido en la actual Irak, dejó un mapa y unos acertijos para desenterrar un tesoro que se dejó en Madrid.
+%
+Consideró que sólo un árabe que supiera de matemáticas tanto como él sería capaz de resolverlo.
+%
+Han pasado varios siglos y se cree que con los conocimientos actuales será posible resolverlo.
+%
+El descubrimiento del mapa y los acertijos es muy reciente, por eso todavía no se ha desenterrado el tesoro.
+
+Se explicará también la gamificación y su sistema de evaluación.
+%
+\todo{Completar}
+
+
+Lo primero es necesario asegurar que los alumnos disponen de la competencia matemática suficiente para llevar a cabo la tarea encomendada.
+%
+Para ello se realizará en esta primera sesión una prueba de aptitud para la tarea.
+%
+Esta prueba de nivel competencial se realizará en el aula de informática con \textit{Kahoot}.
+%
+Servirá como repaso de los contenidos de otros años: Expresiones algebraicas, operaciones con monomios, valor numérico.
+%
+Cada bloque de preguntas irá precedido de un pequeño vídeo que refresque los contenidos.
+%
+A los puntos otorgados por kahoot se le incorporará un bonus polinómico por preguntas acertadas para priorizar la precisión frente a la rapidez.
+%
+Los alumnos que la hayan superado obtendrán el logro de \logro{Investigador Apto}{investigador_apto}.
+%
+Los alumnos que no lo hayan superado en clase, tendrán la opción de repetir la prueba en casa para conseguir el logro de \ref{logro::investigador_apto}.
+
+
+
+\subsubsection{Sesión 1: Expresiones algebraicas y valor numérico}
+
+\paragraph{Contenidos:}
+Los contenidos a tratar en esta unidad didáctica son:
+\begin{itemize}
+\item Grado de un polinomio.
+\item Suma y diferencia de polinomios.
+\item Producto de un monomio por un polinomio.
+\item Factor común de monomios.
+\end{itemize}
+
+
+\paragraph{Desarrollo} Trabajo individual sobre una práctica de modelización.
+
+
+Se les entrega un supuesto 'primer documento de \arab' (expuesto en \ref{app:DocModel}) en el que él mismo explica algunos conceptos.
+%
+Esta es una segunda prueba para comprobar que están a la altura del reto.
+%
+Este documento ya ha sido trabajado y resuelto, pero les puede servir para practicar antes de enfrentarse a los irresolutos.
+%
+Durante la resolución del acertijo el docente paseará entre los alumnos resolviendo dudas y ayudando a quienes les esté costando más. 
+%
+Si resuelven con éxito este trabajo autónomo obtendrán el logro de \logro{Investigador Nato}{investigador_nato}
+%
+Si no lo han podido resolver en clase, será necesaria su resolución para la obtención del logro \ref{investigador_nato}.
+
+En caso de que el trabajo en clase se haya desarrollado satisfactoriamente y todos los alumnos hayan conseguido descifrar el acertijo, se propondrá un pequeño test online (\ref{test:ses1}) para seguir practicando y ejercitándose en el álgebra.
+%
+Excepcionalmente, en el caso de que el trabajo haya resultado muy complicado a los alumnos se podría emplear una sesión más en realizar los ejercicios del test en clase, con las explicaciones pertinentes del profesor.
+
+Para la resolución de los ejercicios en casa dispondrán de la teoría y ejemplos resueltos en la ficha de trabajo del día además del libro de texto de apoyo.
+
+
+\subsubsection{Sesión 2: Operaciones con polinomios I}
+
+\paragraph{Contenidos}
+\begin{itemize}
+	\item Multiplicación de polinomios: propiedad asociativa y distributiva.
+	\item Factor común de polinomios.
+\end{itemize}
+
+\paragraph{Desarrollo}
+
+Se les presentará el primer acertijo real irresoluto de la investigación.
+%
+Debido a la complejidad se trabajará cooperativamente por grupos de 4 decididos por el profesor atendiendo a la teoría del aprendizaje cooperativo. \todo{cita}
+
+Se les explicará a los alumnos que en cualquier trabajo siempre hay una fase previa de formación y para que puedan enfrentarse con alguna garantía al acertijo es necesario que conozcan algunas herramientas matemáticas, como la multiplicación de polinomios.
+%
+Se procederá a una explicación breve por parte del profesor en la pizarra sobre la multiplicación de polinomios explicando la propiedad asociativa y distributiva, incluyendo algunos ejemplos.
+
+Una vez finalizada la explicación, se les entregará el acertijo expuesto en el anexo \ref{app:ses2:coop}
+%
+La resolución del acertijo es un número entero que corresponderá a la parte entera de la latitud del lugar en el que se escondió el tesoro.
+
+
+
+Se les propondrá que realicen trabajo en casa para ejercitarse y poder resolver con garantías los siguientes retos.
+%
+Se les anunciará que para el próximo día se trabajará sobre un documento no resuelto a día de hoy y será necesario que dominen las matemáticas básicas que han aprendido en esta sesión.
+%
+Se les propondrán varios ejercicios en la plataforma online de los que tendrán que seleccionar un número determinado. 
+%
+En principio serían 3, pero este valor puede ser modificado dependiendo del desempeño de los alumnos durante la sesión.
+%
+Cada ejercicio tendrá asociado una puntuación: los ejercicios más difíciles dan más puntos, los ejercicios más fáciles dan menos puntos.
+%
+Se especificará un número mínimo de puntos a conseguir para que los alumnos practiquen en casa. 
+%
+Para motivar que realicen los ejercicios, introducimos el logro \logro{Investigador Comprometido nivel 1}{investigador_comprometido} que se obtiene si se obtiene el número de puntos mínimo.
+%
+Podrán acceder al nivel 2 de este logro si realizan todos los ejercicios propuestos.
+%
+Los ejercicios propuestos se encuentran en \ref{app:ses2:deberes}
+
+\textit{
+	Fundamentación teórica de la posibilidad de elección de los ejercicios de deberes:} 
+	%
+	es bien sabido que los deberes no resultan motivadores para los alumnos. 
+	%
+	Para fomentar su realización se están utilizando 2 técnicas: 
+	%
+	la primera consiste en la explicación sobre la utilidad que puede tener para ellos (resolver mejor los próximos enigmas) y busca despertar una motivación intrínseca de competencia a corto plazo y no a largo plazo como tradicionalmente se hace (para hacer mejor el examen, para ser buen estudiante y tener un futuro asegurado, etc.).
+	%
+	Por otro lado, buscando fomentar su sentido de autonomía se les ofrece la posibilidad de elegir sobre los deberes a realizar. 
+	%
+	Pueden hacer un número variable de ejercicios dependiendo de su interés, habilidad y motivación.
+	%
+	Al ser resueltos en una plataforma online, son corregidos en el momento, provocando una retroalimentación sobre su desempeño inmediata.
+	%
+	Si los ejercicios propuestos suponen un desafío al alumno, se podría inducir un estado de flow llevando al alumno a querer resolver todos los ejercicios o por lo menos, a disfrutar durante su realización.
+
+
+
+\subsubsection{Sesión 3: Operaciones con polinomios II}
+
+\paragraph{Contenidos}
+\begin{itemize}
+	\item División de polinomios.
+	\item Algoritmo de la división
+\end{itemize}
+
+\paragraph{Desarrollo}
+Mismo esquema que la sesión 2.
+
+Consiguen la parte entera de la longitud.
+
+Deberes: ¿qué podrían ser esos números?
+
+
+\subsubsection{Sesión 4: Identidades notables}
+
+Reto: unir polinomios con su (aunque todavía no lo sepan) factorización: lo harán multiplicando los paréntesis y uniendo con el polinomio correspondiente.
+%
+Aparecerán las 3 identidades notables (y varias veces) para ir cogiendo soltura.
+
+Repaso de la multiplicación y de las identidades notables. 
+%
+Ser pesado con ellas.
+
+Esto en la narrativa, ¿cómo encaja?
+%
+Clase de trucos y atajos para resolver mejor los demás retos.
+
+Raíz y Factor.
+
+Test en edmodo de deberes - otorga puntos.
+
+
+\subsubsection{Sesión 4: Factorización}
+
+
+\paragraph{Contenidos}
+\begin{itemize}
+	\item Factorización, componente teórico.
+	\item Ejemplos de factorización con identidades notables: $x^2-4 = (x+2)(x-2)$
+\end{itemize}
+
+\paragraph{Desarrollo}
+\begin{enumerate}
+	\item Corregir los deberes, repasar el test.
+	\item 
+\end{enumerate}
+
+\subsubsection{Sesión 5: Ruffini y atajos}
+
+\paragraph{Contenidos}
+\begin{itemize}
+	\item Algoritmo de factorización de Ruffini.
+	\item Atajos de Ruffini.
+\end{itemize}
+
+\subsubsection{Sesión 6: Reto de todo combinado}
+
+Obtención de los decimales de la longitud.
+
+\subsubsection{Sesión 7: Reto de todo combinado}
+
+Obtención de los decimales de la latitud.
+
+Medalla por hacerse la foto en el sitio.
+%
+Si encontráis un tesoro, se comparte.
+
+
+\subsection{Recursos}
+
+\subsubsection{Recopilación de los elementos de la gamificación }
+
+\begin{itemize}
+	\item Puntos de reputación: Todos los puntos que se obtienen son de reputación.
+	\item Logro \ref{logro::investigador_apto}:
+	\item Logro \ref{logro::investigador_nato}:
+	\item Logro \ref{logro::investigador_comprometido}:
+
+\end{itemize}
+
+
+A continuación una recopilación de los elementos de la gamificación utilizados a lo largo de las sesiones.
+
+¿Medalla que entre los 4 tendrán que entregar a una persona?. 
+- Medalla de clase, máximo 2 al día: reconocer una identidad notable y saber resolverla.
+- Medalla $n$: Modelizar algo de la vida cotidiana con un polinomio de grado $n$.
+- Deberes en edmodo, obtención de puntos. 
+- Economía de fichas. Comprar cosas para el examen: consulta de apuntes, medio puntos más, una pregunta de sí o no 
+- Narrativa: equipo de investigación de un tesoro árabe. Árabes como mayores desarrolladores del álgebra y muchas matemáticas.
+%
+Además, los restos en Madrid de la muralla árabe.
+
+
+\subsection{Evaluación}
+
+\subsubsection{Criterios de evaluación}
+
+
+\begin{table}[hbtp]
+\caption{Matriz de trazabilidad entre los Estándares de Aprendizaje Evaluables y los componentes de la Gamificación.}
+\label{Trazabilidad}
+\begin{tabular}{c|c}
+& Estándares de Aprendizaje Evaluables\\\hline
+Elementos & \\\hline
+\end{tabular}
+\end{table}
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+\section{Evaluación de la gamificación}
+
+Es fundamental saber si la gamificación tal como se ha llevado a cabo ha merecido la pena, qué aspectos son mejorables y cuáles hay que mantener.
+%
+Podríamos utilizar el marco propuesto por \cite{EvaluacionGamificacion} para autoevaluar la gamificación realizada.
