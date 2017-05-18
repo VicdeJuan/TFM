@@ -75,6 +75,11 @@
 \usepackage{soulutf8}
 %\renewcommand{\todo}[1]{\hl{(#1)}}
 
+\usepackage{tocvsec2}
+
+
+\settocdepth{section}
+
 
 \usepackage{footnote}
 \makesavenoteenv{tabular}
@@ -194,46 +199,60 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
-\defcitealias{LOMCE}{Ley Org\'anica 8/2013, de 9 de diciembre, para la Mejora de la Calidad Educativa}
-\defcitealias{BOE}{Real Decreto 1105/2014, de 26 de diciembre, por el que se establece el curr\'iculo b\'asico de la Educaci\'on Secundaria Obligatoria y del Bachillerato.}
-\defcitealias{BOCM}{Decreto 48/2015, de 14 de mayo, del Consejo de Gobierno, por el que se establece para la Comunidad de Madrid el curr\'iculo de la Educaci\'on Secundaria Obligatoria}
-
-
-
+\newif\ifincgls
+\incglsfalse
 
 \newif\ifboe
 \boefalse
-\newcommand{\boe}{
-  \ifboe
-      BOE\xspace
-  \else
-    \citetalias{BOE} (de ahora en adelante BOE)\xspace
-    \boetrue
-  \fi}
-
+  
 \newif\ifbocm
 \bocmfalse
-\newcommand{\bocm}{
-  \ifbocm
-      BOCM\xspace
-  \else
-    \citetalias{BOCM} (de ahora en adelante BOCM)\xspace
-    \bocmtrue
-  \fi}
-
+  
 \newif\iflomce
 \lomcefalse
-\newcommand{\lomce}{
-  \iflomce
-      LOMCE\xspace
-  \else
-    \citetalias{LOMCE} (de ahora en adelante LOMCE)\xspace
-    \lomcetrue
-  \fi}
+  
 
-\newcommand{\eaes}{Estándares de Aprendizaje Evaluables\xspace}
-\newcommand{\eae}{Estándar de Aprendizaje Evaluable\xspace}
+\ifincgls
+
+\newcommand{\boe}{\gls{BOE}}
+\newcommand{\lomce}{\gls{LOMCE}}
+\newcommand{\bocm}{\gls{BOCM}}
+\newcommand{\eaes}{\glspl{EAE}}
+\newcommand{\eae}{\gls{EAE}}
+
+\else
+  \defcitealias{LOMCE}{Ley Org\'anica 8/2013, de 9 de diciembre, para la Mejora de la Calidad Educativa}
+  \defcitealias{BOE}{Real Decreto 1105/2014, de 26 de diciembre, por el que se establece el curr\'iculo b\'asico de la Educaci\'on Secundaria Obligatoria y del Bachillerato.}
+  \defcitealias{BOCM}{Decreto 48/2015, de 14 de mayo, del Consejo de Gobierno, por el que se establece para la Comunidad de Madrid el curr\'iculo de la Educaci\'on Secundaria Obligatoria}
+
+  \newcommand{\boe}{
+    \ifboe
+        BOE\xspace
+    \else
+      \citetalias{BOE} (de ahora en adelante BOE)\xspace
+      \boetrue
+    \fi}
+
+  \newcommand{\bocm}{
+    \ifbocm
+        BOCM\xspace
+    \else
+      \citetalias{BOCM} (de ahora en adelante BOCM)\xspace
+      \bocmtrue
+    \fi}
+
+  \newcommand{\lomce}{
+    \iflomce
+        LOMCE\xspace
+    \else
+      \citetalias{LOMCE} (de ahora en adelante LOMCE)\xspace
+      \lomcetrue
+    \fi}
+
+  \newcommand{\eaes}{Estándares de Aprendizaje Evaluables\xspace}
+  \newcommand{\eae}{Estándar de Aprendizaje Evaluable\xspace}
+
+\fi
 
 \newcommand{\comillas}[1]{“#1”}
 \newcommand{\Justificacion}[1]{\textit{Fundamentación teórica\xspace#1:}\xspace}
@@ -330,9 +349,11 @@ aplicación en el aula de Matemáticas}
 \input{tex/introduccion.tex}
 
 
-\input{tex/marco}
+\cleardoublepage
+\input{tex/chap2}
 
-\input{tex/educacionGamificada}
+\cleardoublepage
+\input{tex/chap3}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -340,7 +361,7 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\input{tex/gamificarMates}
+\input{tex/chap4}
 
 
 
@@ -350,7 +371,7 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\input{tex/conclusiones}
+\input{tex/chap5}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
