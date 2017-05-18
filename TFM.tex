@@ -58,7 +58,7 @@
             pdfsubject={Gamificaci\'on},
             pdfkeywords={Gamificaci\'on, Educaci\'on, Matem\'aticas}]{hyperref}
 			
-\usepackage{breakcites}
+\usepackage{breakcites} % Permite romper citas en saltos de línea.
 \usepackage{enumitem}
 \usepackage{multirow}
 \usepackage{graphicx}
@@ -75,10 +75,9 @@
 \usepackage{soulutf8}
 %\renewcommand{\todo}[1]{\hl{(#1)}}
 
-\usepackage{tocvsec2}
-
-
-\settocdepth{section}
+\usepackage{tocvsec2} % Ignorar subsecciones de los anexos.
+\usepackage{appendix} % Cambiar apéndice por anexo.
+\settocdepth{section} 
 
 
 \usepackage{footnote}
@@ -89,7 +88,7 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%        CABECERAS & TÍTULOS         %%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%         TÍTULOS         %%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -105,14 +104,17 @@
 %\newcommand{\master}{Máster en Formación del Profesorado: especialidad Matemáticas}
 
 
-\newif\ifcrossref
-\crossreffalse
-\ifcrossref
-  \newcommand{\crossref}[1]{#1}
-\else
-  \newcommand{\crossref}[1]{}
-\fi
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%            Header y Footer           %%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
@@ -214,13 +216,23 @@ aplicación en el aula de Matemáticas}
 
 \ifincgls
 
-\newcommand{\boe}{\gls{BOE}}
-\newcommand{\lomce}{\gls{LOMCE}}
-\newcommand{\bocm}{\gls{BOCM}}
-\newcommand{\eaes}{\glspl{EAE}}
-\newcommand{\eae}{\gls{EAE}}
+  
+  \newcommand{\crossref}[1]{#1} % Incluimos referencias cruzadas.
+
+
+  % Incluimos glosario.
+  \newcommand{\boe}{\gls{BOE}}
+  \newcommand{\lomce}{\gls{LOMCE}}
+  \newcommand{\bocm}{\gls{BOCM}}
+  \newcommand{\eaes}{\glspl{EAE}}
+  \newcommand{\eae}{\gls{EAE}}
 
 \else
+  
+  \newcommand{\crossref}[1]{} % Ignoramos referencias cruzadas.
+  
+
+  % Chapuza por no utilizar glosarios.
   \defcitealias{LOMCE}{Ley Org\'anica 8/2013, de 9 de diciembre, para la Mejora de la Calidad Educativa}
   \defcitealias{BOE}{Real Decreto 1105/2014, de 26 de diciembre, por el que se establece el curr\'iculo b\'asico de la Educaci\'on Secundaria Obligatoria y del Bachillerato.}
   \defcitealias{BOCM}{Decreto 48/2015, de 14 de mayo, del Consejo de Gobierno, por el que se establece para la Comunidad de Madrid el curr\'iculo de la Educaci\'on Secundaria Obligatoria}
@@ -249,20 +261,18 @@ aplicación en el aula de Matemáticas}
       \lomcetrue
     \fi}
 
+  % Más chapuzas
   \newcommand{\eaes}{Estándares de Aprendizaje Evaluables\xspace}
   \newcommand{\eae}{Estándar de Aprendizaje Evaluable\xspace}
 
 \fi
 
-\newcommand{\comillas}[1]{“#1”}
-\newcommand{\Justificacion}[1]{\textit{Fundamentación teórica\xspace#1:}\xspace}
-
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%%%%%%%             Índice           %%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%             Renombrando           %%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -272,6 +282,9 @@ aplicación en el aula de Matemáticas}
 
 \renewcommand{\cftfigfont}{Figura }
 \renewcommand{\cfttabfont}{Tabla }
+\renewcommand{\appendixname}{Anexos}
+\renewcommand{\appendixtocname}{Anexos}
+\renewcommand{\appendixpagename}{Anexos}
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -283,6 +296,9 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newcommand{\comillas}[1]{“#1”}
+\newcommand{\Justificacion}[1]{\textit{Fundamentación teórica\xspace#1:}\xspace}
+
 
 \renewcommand{\concept}[2][None]{\text{#2}% IGN
   \marginpar{\footnotesize \textit{\makefirstuc{#2}}}%
@@ -290,9 +306,9 @@ aplicación en el aula de Matemáticas}
   \ifthenelse{\equal{#1}{None}}{\index{#2}}{\index{#1}}}
 
 
-
 \newcommand{\coment}[1]{\textit{#1}}
 \renewcommand{\coment}[1]{}
+
 
 \newcommand{\mylabel}[2]{#2\def\@currentlabel{#2}\labeltext{#2}{#1}}
 \MakeRobust{\ref}% avoid expanding it when in a textual label
@@ -304,6 +320,7 @@ aplicación en el aula de Matemáticas}
   \@esphack
 }
 \makeatother
+
 
 
 
@@ -380,8 +397,13 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \cleardoublepage
-\appendix
 
+\titleformat{\chapter}[display]
+{\normalfont\LARGE\bfseries}{\chaptertitlename\ \thechapter}{18pt}{\LARGE}
+\appendix
+\clearpage
+\addappheadtotoc
+\appendixpage
 \input{tex/anexos}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -401,6 +423,8 @@ aplicación en el aula de Matemáticas}
 % Más información: 
 % http://texblog.org/2014/04/22/using-google-scholar-to-download-bibtex-citations/
 
+\ifincgls
 \printindex
+\fi
 
 \end{document}
