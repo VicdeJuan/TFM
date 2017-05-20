@@ -1,5 +1,6 @@
 MAKE=pdflatex --interaction=batchmode
 VERSION=5
+EXAMEN_DIR=pdf/Examen/
 
 all: TFM.pdf
 
@@ -9,8 +10,11 @@ graphs: img/*.txt
 R: src/*.R
 	Rscript src/*.R
 
+examen:
+	@$(MAKE) $(EXAMEN_DIR)Examen.tex
 
-TFM.pdf: TFM.tex tex/* img/* src/* memoria.bib
+
+TFM.pdf: examen TFM.tex tex/* img/* src/* memoria.bib
 	@$(MAKE) TFM.tex; bibtex TFM; makeglossaries TFM; makeindex TFM; $(MAKE) TFM.tex; $(MAKE) TFM.tex
 	cp TFM.pdf TFM_VictordeJuanV$(VERSION).pdf
 
