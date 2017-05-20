@@ -333,12 +333,16 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \newcommand{\correcta}[1]{\textcolor{green}{#1}}
-\newcounter{bloq}[subsection]
-\renewcommand{\thebloq}{\Roman{bloq}}
+\newcounter{bloq}[section]
+\renewcommand{\thebloq}{\arabic{section}.\alph{bloq}}
 \newcounter{preg}[bloq]
 \newcommand{\newbloq}{\setcounter{preg}{1}\stepcounter{bloq}\paragraph{Bloque \thebloq:}\xspace}
-\renewcommand{\thepreg}{\thebloq.\arabic{preg}}
-\newcommand{\newpreg}{\stepcounter{preg}\textbf{Pregunta \thepreg:}}
+\renewcommand{\thepreg}{\alph{bloq}.\arabic{preg}}
+\newcommand{\newpreg}[2]{
+  \stepcounter{preg}
+  \textbf{Pregunta \thepreg} (por valor de #1 puntos):
+  #2
+  }
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
