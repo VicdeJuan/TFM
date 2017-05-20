@@ -11,23 +11,23 @@ R: src/*.R
 	Rscript src/*.R
 
 examen: $(EXAMEN_DIR)Examen.tex
-	echo "Compilando examen..." 
+	@echo "Compilando examen..." 
 	@$(MAKE) $(EXAMEN_DIR)Examen.tex
-	mv Examen.pdf pdf/Examen.pdf
+	@mv Examen.pdf pdf/Examen.pdf
 
 retos: RetoSes1
 
 	
 RetoSes1:
-	echo "Compilando retos..." 
+	@echo "Compilando retos..." 
 	@$(MAKE) tex/RetoSes1/RetoSes1.tex
-	mv RetoSes1.pdf pdf/RetoSes1.pdf
+	@mv RetoSes1.pdf pdf/RetoSes1.pdf
 
 
 
 TFM.pdf: retos examen TFM.tex tex/* img/* src/* memoria.bib
 	@$(MAKE) TFM.tex; bibtex TFM; makeglossaries TFM; makeindex TFM; $(MAKE) TFM.tex; $(MAKE) TFM.tex
-	cp TFM.pdf TFM_VictordeJuanV$(VERSION).pdf
+	@cp TFM.pdf TFM_VictordeJuanV$(VERSION).pdf
 
 bib: memoria.bib
 	@bibtex TFM; $(MAKE) TFM.tex;
