@@ -1,0 +1,91 @@
+\documentclass[11pt]{article}
+
+\usepackage{xspace}
+\usepackage[utf8]{inputenc}
+\usepackage{aurical}
+\usepackage{pbsi}
+\usepackage{lettrine}
+\usepackage{soulutf8}
+
+\setlength{\DefaultNindent}{1em}
+\setcounter{DefaultLines}{1}
+\input Romantik.fd
+\newcommand*\initfamily{\usefont{U}{Romantik}{xl}{n}}
+\renewcommand{\LettrineFontHook}{\initfamily}
+
+
+\usepackage[margin=1in]{geometry}
+
+
+\DeclareRobustCommand{\augiefamily}{%
+  \fontfamily{augie}\fontseries{m}\fontshape{n}\selectfont}
+\DeclareTextFontCommand{\textaugie}{\augiefamily}
+
+
+\renewcommand{\baselinestretch}{1.2}
+\setlength{\parindent}{4em}
+\setlength{\parskip}{1.5em}
+
+
+\newcommand{\receiver}{Regalado\xspace}
+\newcommand{\giver}{Regalador\xspace}
+
+\begin{document}
+
+%\Fontskrivan
+\bsifamily
+%\usefont{T1}{pbsi}{xl}{n}}
+
+%\twistshape
+
+
+\large
+
+
+¡Hola \giver!
+	
+	Tengo la buena noticia de informarte que esta Navidad pasas a formar parte del equipo de los Reyes Magos, como cuarto Rey Mago. \ul{¡Enhorabuena!}
+	
+	
+	
+	Verás, \LARGE{\receiver} \large necesita un regalo que de alguna forma pueda acercarle a Dios.
+	%
+	Nosotros, Melchor, Gaspar y Baltasar, vamos a cubrir los regalos que haya pedido a su familia, algún amigo... pero a tanto no llegamos. Además, tú conoces a \receiver mejor que nosotros. ¡Seguro que lo haces mejor!
+	
+	Contamos contigo para que le hagas un regalo a \receiver y nos gustaría que tuviera las siguientes características:
+	
+	\vspace{-1em}
+	\begin{itemize}
+	        \item Un regalo hecho con cariño porque \ul{es alguien con quien compartes tu fe y tu vida}. Que le ayude a darse cuenta del regalo que nos hace Dios al tener este grupo de catequesis. ¡Hay infinidad de maneras de demostrarlo! Los tres sabios confiamos en tu creatividad.
+
+	 
+	
+	        \item Nos gustaría que fuera un \ul{regalo hecho a mano}, hecho por ti. Es una buena forma de demostrarle la suerte que tiene al compartir este camino contigo.
+	
+	        \item Si necesitarás comprar algo de material, nos gustaría que \ul{no te gastes más de 5 euros} pues es mejor algo sencillo y cuidado antes que un regalo complicado y costoso.
+
+	        \item Finalmente es importante que sepas que tendrás que \Large{\ul{traer el regalo el viernes 13 de enero}} a tu grupo.                         
+	\end{itemize}
+
+Firmado:
+	
+	\begin{center}
+	\begin{tabular}{ccc}
+	\augiefamily Melchor ,& \augiefamily Gaspar &  \augiefamily \& Baltasar\\\hline
+	\end{tabular}
+	\end{center}
+	
+\newpage
+
+
+\Fontauri\bfseries\slshape
+
+
+\vspace*{\fill}
+\begin{center}
+{\fontsize{65}{130}\textsc{\giver}}
+\end{center}
+\vspace*{\fill}
+
+
+\end{document}

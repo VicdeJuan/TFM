@@ -1,0 +1,140 @@
+\documentclass{article}
+
+\usepackage{xspace}
+\usepackage[utf8]{inputenc}
+\usepackage{aurical}
+\usepackage{pbsi}
+\usepackage{lettrine}
+\usepackage{soulutf8}
+
+\setlength{\DefaultNindent}{1em}
+\setcounter{DefaultLines}{1}
+\input Romantik.fd
+\newcommand*\initfamily{\usefont{U}{Romantik}{xl}{n}}
+\renewcommand{\LettrineFontHook}{\initfamily}
+
+
+\usepackage[spanish,es-tabla]{babel} % Comenta esta línea si tu memoria es en inglés
+\usepackage[margin=1in]{geometry}
+
+
+\DeclareRobustCommand{\augiefamily}{%
+  \fontfamily{augie}\fontseries{m}\fontshape{n}\selectfont}
+\DeclareTextFontCommand{\textaugie}{\augiefamily}
+
+
+\renewcommand{\baselinestretch}{1.2}
+\setlength{\parindent}{2em}
+\setlength{\parskip}{4.5em}
+
+% Paquetes adicionales
+
+% --------------------
+
+\renewcommand{\vec}[1]{\overrightarrow{#1}}
+
+\begin{document}
+\begin{table}
+\centering
+\caption{Resultado del desafío}
+\begin{tabular}{|c|c|c|c|c|c|c|c|c|c|c|c|}
+\hline
+4 & 13 & 7 & 15 & 18 & 0 & 1 & 21 & 4 & 13 & -\\\hline
+E & n  & h & o & r & a & b & u & e & n & -\\\hline
+\end{tabular}
+
+\small{Esta tabla no estará completa en el documento para estudiantes.}
+\end{table}
+
+\augiefamily{Querido diario},
+\Fontauri
+
+Después de un largo día de trabajo y reflexión, puedo sentarme a ordenar mis ideas.
+%
+Estoy muy emocinado con estas matemáticas que estoy desarrollando, ¡y estoy tan entusiasmado que te la voy a contar!.
+
+
+Si a expresiones como $ax^n$ siendo $n$ un número entero, las llamamos monomios. ¿Cómo podríamos llamar a: $ax^2+bx+c$? 
+%
+Pues como son varios monomios juntos, ¡poli-nomio!
+%
+Y de la misma manera que $\frac{1}{x}$ no es un monomio, tampoco lo sería $\frac{x^2+3}{x}$, porque hay un monomio ($x$) que no está sumando ni restando, sino dividiendo.
+
+\textbf{Un polinomio es, sencillamente una suma (¡o resta!) de monomios.}
+
+Y por construirlo así, tenemos propiedades muy parecidas. ¿Te acuerdas del grado de un monomio?
+%
+Llamamos \textbf{grado de un polinomio} al mayor grado de sus monomios. Por ejemplo, el grado de $x^3+2x-1$ sería $3$.
+%
+¿Y el de $p(x) = x^4+2x-1$? ¿Y el de $q(x) = x+x^{13}-x^5$? ¿Y el de $\frac{2}{x}$?
+
+Querido diario, espero que te hayas dado cuenta de la trampa en el último y no te lo tomes a mal jeje.
+%
+Arriba del todo hay una tabla para ir apuntando los valores que te salen. ¡Apunta en las 2 primeras casillas el grado de los 2 primeros polinomios!
+%
+Ya que estamos... ¿y el grado de $3x^7+5x^2+5x^3+5x^7-4x^3+5x^0$? ¡Apúntalo también!
+
+La utilidad de los monomios era poder traducirlos a un número y decir, si $x=2$, ¿cuánto valdría $x^3+2x$? 
+%
+Esto es el \textbf{valor numérico}.
+%
+Como un polinomio simplemente es la suma de monomios, también podemos hacer ¡el valor numérico de un polinomio!. 
+%
+Mira, atento:
+%
+Tenemos $p(x) = 5x^3+1$ y queremos calcular $p(2)$, es decir, el valor numérico de $p(x)$ para $x=2$, sustituimos la $x$ por un $2$ y ¡operamos! $p(2) = 2^3+1=8+1=9$.
+%
+¿Y cuál sería el valor numérico\footnote{Apunta el resultado en la casilla correspondiente de la tabla inicial.} de $p_2(x) = x^4-1$ para $x=2$? 
+
+
+
+¿Y se pueden tener varias \textit{letras} en el polinomio? ¡Claro! ¿Cuál sería el valor numérico\footnotemark[1] de $p_3(x,y) = x^3+y^5-3xy^2-1$ para $x=3,y=1$?
+
+
+
+
+Y ahora,  todo esto se puede combinar y recombinar y alcombinar.
+%
+Por ejemplo, si tenemos $q_1(x) = x^4-5x^2+6x$ y $q_2(x) = x^3-5x^+6$, ¿cuál sería el valor numérico\footnotemark[1] de $p(x) = q_1(x) - x\cdot q_2(x)$ para $x=2$, es decir, $p(x) = (x^4-5x^2+6x) - x\cdot (x^3-5x+6)$ para $x=2$?
+
+
+
+\quad
+
+¿Serías capaz de calcular\footnotemark[1] $p(1)$ siendo $p(x) = 5 x^{150} + 7x^{75} - 9x-2x^{x}$? ¡Y fíjate que ni siquiera es un polinomio! Pero así de versátiles son las matemáticas.
+
+
+
+Un último truco, ¡que me quedo sin papel y ya estás cerca de descifrar el mensaje!
+%
+Piensa en $q_1(x,y) = xy^2-6xy$ y calcula su valor numérico\footnotemark[1] para $x=3,y=7$.
+
+
+
+Mira con atención $q_1(x,y) = xy^2-6xy$. Hay 2 $x$ que están multiplicando, ¿verdad? ¿Podríamos \textit{sacarlas} y escribirlo de otra manera?
+%
+Aquí esta el truquillo del \textbf{Factor Común}:
+%
+$q_1(x,y) = xy^2-6xy = xy^2-6xy = x\cdot (y^2-6y)$. 
+%
+Calcula ahora el valor numérico.
+%
+¿Más sencillo?
+
+Ahora tu, para obtener el siguiente número necesario para descifrar el mensaje, ¿cuál es el mayor grado\footnotemark[1] del factor común que podemos sacar en
+$q_2 = x^4y^3z + x^4y^2 + x^5y^6$?
+
+
+
+Ahora, saca todos los factores comunes que puedas de $q_2$
+% Sol: x^4y^2(yz+1+xy^4) 
+y suma todos los exponentes de toda parte literal. ¡Ese número ocupa la penúltima posición del mensaje!
+
+
+Tal vez seas capaz de descifrar ya el mensaje, pero sino, ¿Cuál es el valor numérico \footnotemark[1] de $p(x,y) = x^3y^5 + xy^4+x^2y^3+5xy+13y^2x$ para $x=0,y=13$?
+
+
+%% Apendices (ejercicios, examenes)
+
+
+\end{document}
