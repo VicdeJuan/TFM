@@ -18,7 +18,7 @@ Falta:
 	%\item Docu 2 de \Arab, cooperativo (multiplicación).
 	%\item Docu 3 de \Arab, cooperativo (división).
 	%\item Docu 4 de \Arab, individual unir-poli con factorización. Diseñado, hacer a mano.
-	\item Docu Irresoluble de Ruffini.
+	%\item Docu Irresoluble de Ruffini.
 	\item Reto final:
 		\subitem Retos individuales.
 		\subitem ¿Automatización del cambio de números?
@@ -26,6 +26,7 @@ Falta:
 	%Premisa\item Examen.
 	%Premisa\item Resumen, palabras clave.
 	%Premisa\item Abstract, key words.	
+	\item Cuenta en edmodo para los ejercicios.
 \end{itemize}
 
 %%%%%%%%%%%%%%%%%%%
@@ -362,13 +363,10 @@ Para la resolución de los ejercicios en casa dispondrán de la teoría y ejempl
 
 Además, en esta sesión se pondrá en marcha el logro \logro{Contextualizador}{contextualizador}, que los alumnos podrán obtener por la aplicación de alguno de los contenidos de la clase de matemáticas en su vida cotidiana y su posterior explicación a la clase.
 
-\subsection{Expresiones algebraicas y su valor numérico}
+\subsection{Documento Cero: Expresiones algebraicas y su valor numérico}
 \label{app:DocModel}
 
-
 \includepdf[pages=-,pagecommand={},width=1.22\textwidth]{pdf/RetoSes1.pdf}
-
-
 
 \subsection{Test de la sesión 1}
 \label{test:ses1}
@@ -462,7 +460,7 @@ Los ejercicios propuestos se encuentran en \ref{app:ses2:deberes}
 	Si los ejercicios propuestos suponen un desafío al alumno, se podría inducir un estado de flow llevando al alumno a querer resolver todos los ejercicios o por lo menos, a disfrutar durante su realización.
 
 
-\subsection{Acertijo Cooperativo (sesión 2)}
+\subsection{Primer Documento: Acertijo Cooperativo (sesión 2)}
 \label{app:ses2:coop}
 
 Se repartirá un documento por grupo. 
@@ -563,7 +561,7 @@ Esta situación es diferente a la situación de la multiplicación de polinomios
 Por ello en la sesión de multiplicación es necesario trabajo en casa que trabaje el contenido, mientras que en la sesión de división no es imprescindible.
 
 
-\subsection{Acertijo Cooperativo (sesión 3)}
+\subsection{Segundo Documento: Acertijo Cooperativo (sesión 3)}
 \label{app:ses3:coop}
 
 Este reto se realiza por parejas dentro del grupo.
@@ -648,19 +646,20 @@ Se propondrán ejercicios de deberes en \textit{edmodo} (ver \ref{ses4:deberes})
 \label{app:ses4:indiv}
 
 Se trata de unir cada producto de factores con su polinomio correspondiente. 
-%
-La solución es la siguiente:
+El reto se encuentra en la figura \ref{RetoUnir} y la solución en la equación \ref{RetoUnirSol}
 
-\[
-	\begin{array}{cc}
-		(x-6)(x+1) & x^2-5x+6\\
-		(x-3)(x-2)(x+4) & x^3-x^2-14x+24\\
-		(x-2)(x+2) & x^2-4\\
-		(x+3)^2 & x^2+6x+9\\
-		(x-2)^2 & x^2-4x+4\\
-		(x^2+1)(x-3) & x^3-3x^2+x-3\\
+\begin{equation}
+\label{RetoUnirSol}
+	\begin{array}{lcr}
+		(x-6)(x+1) & \longleftrightarrow &  x^2-5x+6\\
+		(x-3)(x-2)(x+4) & \longleftrightarrow & x^3-x^2-14x+24\\
+		(x-2)(x+2) & \longleftrightarrow & x^2-4\\
+		(x+3)^2 & \longleftrightarrow & x^2+6x+9\\
+		(x-2)^2 & \longleftrightarrow & x^2-4x+4\\
+		(x^2+1)(x-3) & \longleftrightarrow & x^3-3x^2+x-3\\
 	\end{array}
-\]
+\end{equation}
+
 
 
 \begin{figure}[hbtp]
@@ -674,7 +673,7 @@ La solución es la siguiente:
 \subsubsection{Deberes}
 \label{ses4:deberes}
 
-\newbloq A realizar 4 de 6:
+\newbloq A realizar 4 de 7:
 
 \newpreg{\hl{0}}{Calcula, sin multiplicar:
 $(x-3)^2+(x+3)^2$
@@ -770,27 +769,33 @@ Se propone el siguiente itinerario:
 
 \paragraph{Contenidos}
 \begin{itemize}
-	\item Algoritmo de factorización de Ruffini.
+	\item Algoritmo de división de Ruffini.
+	\item Aplicación a la factorización.
+	\subitem Atajos en la factorización.
 \end{itemize}
 
 \paragraph{Desarrollo de la sesión}
 
-Se les propondrá un reto cooperativo durante la primera media hora (ver \ref{ses6:coop}).
+Se comenzará la sesión explicando el algoritmo de Ruffini para la división. 
 %
-Este reto es muy completo y no lo conseguirán terminar porque incluirá una factorización de un polinomio de grado 4 y otro de grado 3 con término independiente.
+Se comenzará diviendo $2x^3-x^4+5x-4$ entre $x-3$ (cuyo resultado es $-x^3-x^2-3x-4$ y resto $-16$).
+
+Una vez explicado el método, se les pedirá que vuelvan a hacer el desafío de las divisiones (\ref{app:ses3:coop}) con el mismo esquema de trabajo utilizando siempre que puedan el algoritmo de Ruffini.
 %
-Así, será necesario que escuchen e interioricen el método de Ruffini para factorizar polinomios.
+Se espera que, al realizar las mismas divisiones, se den cuenta del potencial de Ruffini como algoritmo de división.
+
+Cuando hayan terminado se procederá a la explicación de cómo factorizar polinomios como $ p(x) = x^3+2x^2-5x-6$ cuyos factores son: $(x+1)(x-2)(x+3)$. 
 %
-Podrán practicar con los 2 polinomios del reto y con otros ejercicios propuestos por el docente con los que los alumnos podrán obtener puntos.
+Se explicará que es un método de prueba y error,  pero que disponemos de algunos atajos para su realización. 
 %
-La resolución del reto correctamente les otorgará la parte decimal de la longitud de la localización del tesoro.
+En este polinomio, las posibles raíces enteras son los divisores del término independiente entre el coeficiente principal, es decir: $\pm1,\pm2,\pm3,\pm6$.
+
+Una vez realizado este ejemplo, se les propondrán para que trabajen ellos los siguientes ejercicios: $x^3-x^2-x+1 = (x-1)^2(x+1)$, $x^2-4x+4 = (x-2)^2$ y $x^3-4x^2+x+6 = (x+1)(x-2)(x-3)$
 
 Se propondrán ejercicios de deberes en \textit{edmodo} (ver \ref{ses6:deberes}) con el esquema utilizado anteriormente.
 %
 En estos deberes se incorporará un vídeo con la explicación teórica sobre la factorización de polinomios con coeficiente principal distinto de 1.
 
-\subsection{Reto cooperativo (sesión 6)}
-\label{ses6:coop}
 
 \subsubsection{Deberes}
 \label{ses6:deberes}
@@ -830,7 +835,7 @@ En estos deberes se incorporará un vídeo con la explicación teórica sobre la
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%%%%%%%%%%%%%%\section 			y 8		%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%		Sesiones 7 y 8		%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
