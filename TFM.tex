@@ -80,6 +80,9 @@
 \settocdepth{section} 
 
 
+%\usepackage{longtable}
+\usepackage{booktabs}
+\usepackage{ltablex}
 
 
 
@@ -275,6 +278,7 @@ aplicación en el aula de Matemáticas}
 
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -391,6 +395,12 @@ aplicación en el aula de Matemáticas}
 }
 \makeatother
 
+\titleformat{\paragraph}[hang]{\normalfont\normalsize\bfseries}{\theparagraph}{-0.6em}{}
+%\titlespacing*{\paragraph}{0pt}{3.25ex plus 1ex minus .2ex}{0.5em}
+
+\newif\ifinapp
+\inapptrue
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -401,7 +411,11 @@ aplicación en el aula de Matemáticas}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\newcommand{\correcta}[1]{\textcolor{green}{#1}}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
+
+\newcommand{\correcta}[1]{\circled{#1}}
 \newcounter{bloq}[section]
 \renewcommand{\thebloq}{\arabic{section}.\alph{bloq}}
 \newcounter{preg}[bloq]
@@ -504,6 +518,62 @@ aplicación en el aula de Matemáticas}
 \input{tex/UD}
 
 \cleardoublepage
+\ifinapp
+
+  \chapter{Documentos adjuntos}
+
+  A continuación se presenta el apéndice de los documentos completos mencionados a lo largo del trabajo.
+  %
+  Esto es, los retos de las sesiones 1,2,3 (Introducción, multiplicación y división de polinomios respectivamente).
+  %
+  A continuación se encuentra el reto cooperativo final.
+  %
+  Por último, encontramos los documentos correspondientes al examen y la autoevaluación propuestos para esta Unidad Didáctica.
+
+
+  \cleardoublepage
+  \rhead{}
+  \lhead{}
+  \chead{Reto de la primera sesión (Introducción)}
+  \label{app:retoses1}
+  \includepdf[pages=-,pagecommand={},width=1.4\textwidth]{src/RetoSes1.pdf}
+
+  \cleardoublepage
+  \chead{Reto de la sesión 2 (Multiplicación de polinomios)}
+  \label{app:retomulti}
+  \includepdf[pages=-,pagecommand={},width=1.05\textheight,landscape=true,clip,trim=45mm 20mm 50mm 10mm]{src/RetoMulti.pdf}
+
+  \cleardoublepage
+  \chead{Reto de la sesión 3 (División de polinomios)}
+  \label{app:retodivi}
+  \includepdf[pages=-,pagecommand={},width=1.05\textheight,landscape=true]{src/RetoDivision.pdf}
+
+
+  \cleardoublepage
+  \chead{Reto de las sesiones 7 y 8 (Repaso general)}
+  \label{app:retocoop}
+  \includepdf[pages={1},pagecommand={},width=1.05\textheight,landscape=true]{src/RetoCoop.pdf}
+
+  \cleardoublepage
+  \chead{Examen propuesto para la Unidad Didáctica}
+  \label{app:examen}
+  \includepdf[pages=-,pagecommand={},width=1.22\textwidth]{pdf/Examen.pdf}
+
+  \cleardoublepage
+  \chead{Autoevaluación propuesta para la Unidad Didáctica}
+  \label{app:autoeval}
+  \includepdf[pages={120},pagecommand={},width=1.2\textwidth]{pdf/3ESOBCompletoLOMCE.pdf}
+
+  \chead{\centerhead}
+  \rhead{\righthead}
+  \lhead{\lefthead}
+
+\fi
+
+\chapter{Recursos adicionales}
+
+
+
 \input{tex/sage}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

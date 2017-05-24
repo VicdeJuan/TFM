@@ -22,7 +22,8 @@ RetoSes1:
 	@$(MAKE) tex/RetoSes1/RetoSes1.tex > /dev/null
 	@mv RetoSes1.pdf pdf/RetoSes1.pdf
 
-
+fast:
+	pdflatex TFM.tex
 
 TFM.pdf: retos examen TFM.tex tex/* img/* src/* memoria.bib
 	@echo "Compilando TFM..."

@@ -213,7 +213,6 @@ Los alumnos son los historiadores con una mayor competencia matemática de Europ
 
 Se han encontrado una serie de documentos que no se ha conseguido descifrar en su totalidad y se cree que los alumnos van a ser capaces de resolverlo.
 %
-%
 Este documento utiliza las matemáticas de Abu Bekr ibn Muhammad ibn al-Husayn al-Karaji, el primero en definir los monomios $x$,$x^2$... y proporcionar reglas para su producto, es decir, el primero en definir las bases del álgebra\citep{MatArabe}.
 %
 Para poder resolver el enigma será necesario que aprendamos las matemáticas que se utilizaban en Al-Ándalus.
@@ -222,7 +221,24 @@ Será necesario que en su cuaderno incorporen un diario del investigador, en el 
 %
 En cada clase se irán obteniendo partes de las coordenadas geográficas de un lugar de Madrid y se irán aprendiendo herramientas para resolver el problema.
 
-%%%%%%%%%%%%% \todo{Definir el lugar donde está el tesoro}
+El lugar elegido en el que supuestamente se encuentra el tesoro son los restos de la muralla musulmana de Madrid, al lado de la Catedral de la Almudena. 
+%
+Actualmente la muralla soporta la parte de la calle Mayor en su paso por la parte posterior de la Catedral y rodea el parque Emir Mohamed.
+%
+Este lugar tiene de coordenadas geográficas: latitud 40.414984, y longitud -3.714572.
+%
+\label{defn:coordenadas}
+
+\begin{figure}[hbtp]
+\centering
+\caption{Restos de la muralla musulmana de Madrid.}
+\label{img:MurallaMusulmana}
+\includegraphics[scale=0.33]{img/Muralla.jpg}
+\\
+\small{Fuente: Wikipedia Commons.}
+\end{figure}
+\FloatBarrier
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -320,34 +336,41 @@ En la última sesión, no necesariamente la sesión siguiente, tendrá lugar el 
 
 \subsubsection{Recopilación de los elementos de la gamificación }
 
-Los recursos de la gamificación utilizados se encuentran descritos en la tabla \ref{Gamify:resumen}.
+Los recursos utilizados serán los propios desarrollados para esta Unidad Didáctica acompañadas del libro de referencia \cite{MareaVerde}.
+%
+Entre los recursos desarrollados se encuentran la utilización de la plataforma edmodo para la resolución de ejercicios, los materiales didácticos disponibles en el aula para las exposiciones por parte del docente y la plataforma online \textit{Kahoot} para la sesión introductoria.
 
-\begin{table}
-\centering
+Por otro lado, se disponen de todos los recursos propios de esta gamificación.
+%
+Dichos recursos se encuentran descritos en las tablas \ref{Gamify:resumen} y \ref{tbl:tienda}.
+
+
+
+\begin{longtable}{|m{0.06\linewidth}|m{0.28\linewidth}|m{0.49\linewidth}|}
 \caption{Recopilación de los elementos de la gamificación utilizados}
-\label{Gamify:resumen}
-\begin{tabular}{|m{0.06\linewidth}|m{0.35\linewidth}|m{0.42\linewidth}|}
+\label{Gamify:resumen}\\
 \hline
-ID & Nombre & Descripción\\\hline
+\textbf{ID} & \textbf{Nombre} & \textbf{Descripción}\\\hline
+\endhead
 EG1\labeltext{EG1}{puntos} & Puntos de reputación & Todos los puntos que se obtienen son de reputación.
 %
 El profesor podrá otorgar puntos de reputación a los alumnos por hacer preguntas interesantes o ayudarse entre ellos.
 \\\hline
-EG2\labeltext{EG2}{apto} & Logro \ref{logro::investigador_apto} &\\\hline
-EG3\labeltext{EG3}{nato} & Logro \ref{logro::investigador_nato} &\\\hline
-EG4\labeltext{EG4}{comp} & Logro \ref{logro::investigador_comprometido} & Niveles.\\\hline
-EG5\labeltext{EG5}{avizor} & Logro \ref{logro::avizor} & Niveles.\\\hline
-EG6\labeltext{EG6}{context} & Logro \ref{logro::contextualizador} & Niveles.\\\hline
-EG7\labeltext{EG7}{narrativa} & Narrativa & Los alumnos son investigadores de unos manuscritos árabes.\\\hline
-EG8\labeltext{EG8}{explorador} & Medalla \logro{Explorador}{explorador} & Obtenible por hacerse la foto en el lugar del tesoro.\\\hline
+EG2\labeltext{EG2}{apto} & Logro \ref{logro::investigador_apto} & Se consigue por la resolución del \textit{Kahoot} realizado en la sesión introductoria.\\\hline
+EG3\labeltext{EG3}{nato} & Logro \ref{logro::investigador_nato} & Se consigue mendiante la correcta resolución del primer ejercicio autónomo propuesto en el aula.\\\hline
+EG6\labeltext{EG4}{context} & Logro \ref{logro::contextualizador} & Este logro tiene niveles y 3 subnieveles en cada nivel. Se obtendrá un subnivel por la aplicación de alguno de los contenidos de la clase de matemáticas en su vida cotidiana y su posterior explicación a la clase.\\\hline
+EG4\labeltext{EG5}{comp} & Logro \ref{logro::investigador_comprometido} & Se consigue un nivel del logro por la realización de los deberes mínimos el primer día y 2 niveles por la realización de todos los deberes del primer día.\\\hline
+EG5\labeltext{EG6}{avizor} & Logro \ref{logro::avizor} & Este logro también tiene niveles y 3 subniveles por nivel. 
+%
+Se obtendrá un subnivel del logro cada vez que se identifique y se resuelva con éxito una identidad notable durante una actividad conjunta de toda la clase (como puede ser durante una exposición del docente).\\\hline
+EG7\labeltext{EG7}{narrativa} & Narrativa & Los alumnos son investigadores de unos manuscritos árabes sobre Matemáticas y tienen que desenterrar un tesoro escondido en Madrid.\\\hline
+EG8\labeltext{EG8}{explorador} & Medalla \logro{Explorador}{explorador} & Obtenible al realizarse un \textit{selfy} en el lugar del tesoro.\\\hline
 EG9\labeltext{EG9}{eleccion} & Elección & Posibilidad de elección de los deberes a realizad (Mecánica de la gamificación). \\\hline
 EG10\labeltext{EG10}{feedback} & Retroalimentación inmediata & Utilización de una herramienta online para aportar retroalimentación inmediata a los alumnos al realizar los deberes \\\hline
-EG11\labeltext{EG11}{fichas} & Economía de fichas & Tienda en la que poder comprar ciertos privilegios con los puntos obtenidos a lo largo de las sesiones. Descritos en \ref{tbl:tienda}. \\\hline
-\end{tabular}
-\end{table}
-\FloatBarrier
-
-\todo{Definir puntos de la tienda}
+EG11\labeltext{EG11}{fichas} & Economía de fichas & Los puntos de reputación sirven como moneda en una economía. Los puntos invertidos en compras se pierden.
+%
+En la tienda se pueden comprar ciertos privilegios descritos en \ref{tbl:tienda}. \\\hline
+\end{longtable}
 
 \begin{table}[hptb]
 \centering
@@ -356,27 +379,28 @@ EG11\labeltext{EG11}{fichas} & Economía de fichas & Tienda en la que poder comp
 \begin{tabular}{|m{0.15\linewidth}|m{0.2\linewidth}|m{0.6\linewidth}|}
 \hline
 Puntos & Nombre & Descripción \\ \hline
-$n$ & ExtraQuizz	& Aumentar en 1 el número de ejercicios que se pueden hacer en \textit{edmodo} para ganar puntos.\\\hline
-$x^2·m$ & TeacherQuizz & $x$ preguntas directas (de sí o no) y precisas\footnotemark al docente en el examen\\\hline
-$t$ & Miniatura algebraica & Una botella de Klein impresa en 3D \citep{Klein} \\\hline
-$s$ & Bonus x2 & Obtención de un bonus duplicador de puntos para una sesión.\\\hline
+$200$ & ExtraQuizz	& Aumentar en 1 el número de ejercicios que se pueden hacer en \textit{edmodo} para ganar puntos.\\\hline
+$(x^2-x+1)·320$ & TeacherQuizz & $x$ preguntas directas (de sí o no) y precisas\footnotemark al docente en el examen\\\hline
+$400$ & Miniatura algebraica & Una botella de Klein impresa en 3D \citep{Klein} \\\hline
+$200$ & Bonus x2 & Obtención de un bonus duplicador de puntos para una sesión.\\\hline
 %$r$ &  &  \\\hline
 \end{tabular}
 \footnotetext{Preguntas del tipo: ¿Este ejercicio está bien? es demasiado ambigua y no sería válida. Preguntas como: ¿Con el ejercicio así obtendría la máxima puntuación? sí sería válida.
 %
 El grado de precisión de una pregunta será competencia única del docente en el momento del examen.}
 \end{table}
+
 \FloatBarrier
 
 \subsection{Evaluación}
 
 \label{eval}
 %
-La evaluación que se propone para esta unidad didáctica es a través de un examen incluido en \ref{examen} con la ponderación que estuviera establecida en la \gls{PDA} y el trabajo de clase, que se medirá mediante los puntos y medallas obtenidos por cada alumno.
+La evaluación que se propone para esta unidad didáctica es a través de un examen incluido en \ref{app:examen} con la ponderación que estuviera establecida en la \gls{PDA} y el trabajo de clase, que se medirá mediante los puntos y medallas obtenidos por cada alumno.
 
 Para establecer ponderación de las medallas y de los puntos de reputación para obtener la calificación del trabajo de clase se propone el siguiente sistema:
 %
-de los 10 puntos de actitud y trabajo en clase, hasta un máximo de 5 puntos se podrán obtener mediante logros, otorgando cada logro un punto\footnote{2 niveles de un mismo logro otorgarán 2 puntos} y hasta un máximo de 5 puntos se podrán obtener mediante puntos de reputación, mediante una regla de 3, correspondiendo 5 puntos con ¿100?\todo{por definir} puntos de reputación y 0 puntos con 0 puntos de reputación.
+de los 10 puntos de actitud y trabajo en clase, hasta un máximo de 5 puntos se podrán obtener mediante logros, otorgando cada logro un punto\footnote{2 niveles de un mismo logro otorgarán 2 puntos} y hasta un máximo de 5 puntos se podrán obtener mediante puntos de reputación, mediante una regla de 3, correspondiendo 5 puntos con 800 puntos de reputación\footnote{El máximo que se puede obtener sin bonus son 1160.} y 0 puntos con 0 puntos de reputación.
 
 
 La evaluación a través de un examen tiene varias ventajas:
