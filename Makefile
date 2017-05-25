@@ -1,6 +1,8 @@
 MAKE=pdflatex 
 VERSION=6
 EXAMEN_DIR=pdf/Examen/
+NAME=deJuanSanz_Victor.pdf
+
 
 all: TFM.pdf
 
@@ -29,6 +31,10 @@ TFM.pdf: retos examen TFM.tex tex/* img/* src/* memoria.bib
 	@echo "Compilando TFM..."
 	@$(MAKE) TFM.tex >/dev/null ; bibtex TFM > /dev/null ; makeglossaries TFM > /dev/null ; makeindex TFM > /dev/null ; $(MAKE) TFM.tex > /dev/null ; $(MAKE) TFM.tex > /dev/null ;
 	@cp TFM.pdf TFM_VictordeJuanV$(VERSION).pdf
+	
+final:
+	@cp TFM.pdf $(NAME)
+	@cp $(NAME) ~/Compartido/Dropbox/TFM
 
 bib: memoria.bib
 	@bibtex TFM > /dev/null ; $(MAKE) TFM.tex > /dev/null ;
