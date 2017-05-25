@@ -32,6 +32,7 @@
 \RequirePackage{MathUnicode} % Paquete para poder poner caracteres griegos y demás cosas raras.
 
 \usepackage[a4paper, left=3.8cm, right=2.5cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
+%\usepackage[a4paper, left=3.1cm, right=2.5cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
 \usepackage{times}
 
 %\usepackage[utf8]{inputenc}
@@ -137,8 +138,17 @@
 
 
 \titleformat{\chapter}
-  {\normalfont\LARGE\bfseries}{\thechapter.}{0.5em}{}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thechapter.}{0.5em}{}
 \titlespacing*{\chapter}{0pt}{3.5ex plus 1ex minus .2ex}{2.3ex plus .2ex}
+
+\titleformat{\section}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesection}{1em}{}
+
+\titleformat{\subsection}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesubsection}{1em}{}
+
+\titleformat{\subsubsection}
+  {\normalfont\fontsize{12}{15}\bfseries}{\thesubsubsection}{1em}{}
 
 
 
@@ -517,7 +527,7 @@ aplicación en el aula de Matemáticas}
 \cleardoublepage
 
 \titleformat{\chapter}[display]
-{\normalfont\LARGE\bfseries}{\chaptertitlename\ \thechapter}{18pt}{\LARGE}
+{\normalfont\fontsize{12}{15}\bfseries}{\chaptertitlename\ \thechapter}{18pt}{}
 \appendix
 \clearpage
 \addappheadtotoc
