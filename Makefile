@@ -1,5 +1,5 @@
 MAKE=pdflatex 
-VERSION=5
+VERSION=6
 EXAMEN_DIR=pdf/Examen/
 
 all: TFM.pdf
