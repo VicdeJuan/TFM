@@ -67,15 +67,14 @@ digital: digitalBefore TFM_d
 
 
 final: 
-	@mkdir -p Entrega/Imprimir Entrega/Digital/
+	@mkdir -p Entrega
 	
 	@make digital
-	@cp $(DIGITAL_NAME) Entrega/Digital/$(NAME)
-	@cp $(DIGITAL_NAME) Entrega
+	@cp $(DIGITAL_NAME) Entrega/$(NAME)
 		
-	@make printed
-	@cp $(PRINT_NAME) Entrega/Imprimir/$(NAME)
-	@cp $(PRINT_NAME) Entrega
+	#@make printed
+	#@cp $(PRINT_NAME) Entrega/Imprimir/$(NAME)
+	#@cp $(PRINT_NAME) Entrega
 
 	@cp -rv Entrega ~/Compartido/Dropbox/TFM
 

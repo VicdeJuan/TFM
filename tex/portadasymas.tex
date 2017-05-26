@@ -119,15 +119,16 @@ mi familia / mi abuelo / mi abuela}
 
 
 %%%% Índice de contenidos
-\cleardoublepage
 \renewcommand{\contentsname}{{\normalfont\fontsize{12}{15}\bfseries}Índice de Contenidos}
 
 \fancypagestyle{plain}{}
 \begingroup
-  \cleardoublepage
-  \pagestyle{fancy}
-  \tableofcontents
-  \cleardoublepage
+	%\ifdefined\printedVersion
+  	\cleardoublepage
+	%\fi
+	\pagestyle{fancy}
+	\tableofcontents
+	\cleardoublepage
 \endgroup
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
