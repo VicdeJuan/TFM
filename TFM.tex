@@ -17,7 +17,11 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\documentclass[a4paper, 12pt]{book}
+\ifdefined\printedVersion
+  \documentclass[a4paper, 12pt]{book}
+\else
+  \documentclass[a4paper, 12pt, oneside, openany]{book}
+\fi
 %\usepackage[T1]{fontenc}
 %\usepackage[utf8]{inputenc}
 
@@ -31,8 +35,13 @@
 
 \RequirePackage{MathUnicode} % Paquete para poder poner caracteres griegos y demás cosas raras.
 
-\usepackage[a4paper, left=3.8cm, right=2.5cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
-%\usepackage[a4paper, left=3.1cm, right=2.5cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
+
+%\ifdefined\printedVersion
+%  \usepackage[a4paper, left=3.8cm, right=2.5cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
+%\else
+\usepackage[a4paper, left=3cm, right=3cm, top=3.3cm, bottom=3cm,headsep=1cm,headheight=3cm]{geometry}
+%\fi
+
 \usepackage{times}
 
 %\usepackage[utf8]{inputenc}
@@ -116,6 +125,7 @@
 
 
 
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -127,14 +137,16 @@
 
 
 
-\pagestyle{fancy}
-\fancyhf{}
+%\pagestyle{fancy}
+%\fancyhf{}
 
 \renewcommand{\headrulewidth}{0.4pt}
 \renewcommand{\headrule}{{
 \vspace{0.3cm}\hrule width\headwidth height\headrulewidth \vskip-\headrulewidth}}
 
 \renewcommand{\thesection}{\thechapter.\arabic{section}}
+
+
 
 
 \titleformat{\chapter}
@@ -149,6 +161,26 @@
 
 \titleformat{\subsubsection}
   {\normalfont\fontsize{12}{15}\bfseries}{\thesubsubsection}{1em}{}
+
+
+\renewcommand{\cfttoctitlefont}{\normalfont\fontsize{12}{15}\bfseries}
+\renewcommand{\cftaftertoctitle}{\hfill}
+\setlength{\cftbeforetoctitleskip}{20pt}
+\setlength{\cftaftertoctitleskip}{10pt}
+
+\renewcommand\cftloftitlefont{\normalfont\fontsize{12}{15}\bfseries}
+\renewcommand{\cftafterloftitle}{\hfill}
+\setlength{\cftbeforeloftitleskip}{20pt}
+\setlength{\cftafterloftitleskip}{10pt}
+
+\renewcommand\cftlottitlefont{\normalfont\fontsize{12}{15}\bfseries}
+\renewcommand{\cftafterlottitle}{\hfill}
+\setlength{\cftbeforelottitleskip}{20pt}
+\setlength{\cftafterlottitleskip}{10pt}
+
+
+%\renewcommand{\cfttoftitlefont}{\normalfont\fontsize{12}{15}\bfseries}
+%\renewcommand{\cfttoltitlefont}{\normalfont\fontsize{12}{15}\bfseries}
 
 
 
